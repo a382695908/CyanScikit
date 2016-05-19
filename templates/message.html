@@ -1,0 +1,543 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description " content="CyanScikit科技网(中文名三刺客网),高质量的科技展示和众包服务平台,也是科技爱好者和极客们交流,分享技术和科技最佳舞台。" />
+<meta name="keywords" content="CyanScikit科技——不止有态度,IT科技网站,众包服务平台,包含CS 博客,CS 搜索,CS 日报,CS Market,资源下载,网络安全,极客活动,搜索引擎" />
+<title>{{ name }}的个人中心</title>
+<link rel="stylesheet" type="text/css" href="/static/css/message.css" />
+</head>
+<script language="JavaScript" type="text/javascript">
+     //定义了城市的二维数组，里面的顺序跟省份的顺序是相同的。通过selectedIndex获得省份的下标值来得到相应的城市数组
+     var smallcate=[
+     ["LOGO设计","包装设计","软件UI设计","网页设计","宣传画制作","VI设计","产品设计"],
+     ["前端开发","后台开发","服务器端开发"],
+     ["游戏开发","插件开发","实用软件开发"],
+     ["游戏开发","插件开发","实用软件开发"],
+     ["公众号运营","微信开发"],
+     ["flash制作","视频剪辑","图像处理"],
+     ["活动策划","文案撰写","品牌人物取名","专业翻译"],
+     ["数码电子","智能穿戴","机械产品","箱包鞋服"],
+     ["创意服务","调研推广","家政/家教","旅游/婚庆","代办/找人"],
+     ["数码电子","化妆品","音象书籍","箱包鞋服","文体户外","办公设备"],
+     ["校园兼职","网络兼职","公司兼职","公司实习","应届生招聘"]
+     ];
+
+     function getCate(){
+         //获得大类别下拉框的对象
+         var sltbigcate=document.form1.bigcate;
+         //获得小类别下拉框的对象
+         var sltsmallcate=document.form1.smallcate;
+         //得到对应大类别的小类别数组
+         var bigsmall=smallcate[sltbigcate.selectedIndex - 1];
+
+         //清空小类别下拉框，仅留提示选项
+         sltsmallcate.length=1;
+
+         //将大类别数组中的值填充到大类别下拉框中
+         for(var i=0;i<bigsmall.length;i++){
+             sltsmallcate[i+1]=new Option(bigsmall[i],bigsmall[i]);
+         }
+     }
+     function show(){
+        var f=document.getElementById(a);
+        f.submit();
+     }
+ </script>
+
+<body>
+
+    <script language="JavaScript">
+        {% if error %}
+            alert("{{ error }}");
+        {% endif %}
+    </script>
+    <div class="head wp1">
+		<span class="head_span1">CyanScikit科技-不止有态度</span>
+        {% if name and pwd %}
+            <span class="head_span2">
+                <a href="/csMarket/user">{{ name }}</a>  |
+                <a href="/logre/logout/">注销</a>
+            </span>
+        {% else %}
+            <span class="head_span2">
+                <a href="/logre/login" >登录  | </a>
+                <a href="/logre/regeister">注册  |</a>
+                <a href="/logre/logout">注销</a>
+            </span>
+        {% endif %}
+	</div>
+		
+	<div class="head1 wp">
+		<table class="head1_table">
+			<tr class="head1_table_tr">
+				<td align="left" style="width:50%;" >&nbsp;&nbsp;<a href="/index/index"><img src="/static/img/market_logo.png"></a></td>
+				<td align="right"><a href="/csMarket/market">Market首页   &nbsp; |</a></td>
+                <td align="right"><a href="/csMarket/xsMarket">悬赏大厅    &nbsp; |</a></td>
+				<td align="right"><a href="/csMarket/fwMarket">服务商库    &nbsp; |</a></td>
+				<td align="right"><a href="/csMarket/showMarket">作品展示    &nbsp; |</a></td>
+				<td align="right"><a href="/csMarket/message">发布信息</a></td>
+			</tr>
+		</table>
+	</div>
+
+    <div class="c_zhaomu">
+        <a href=""><img src="/static/img/head.png" /></a>
+    </div>
+
+    <form action="" method="post" name="form1">
+        <div class="user">
+            <span class="soso" >
+                <input type="text" name="text" class="soso_input1" />
+                <input type="button" name="btn" class="soso_input2" value=" "/>
+            </span>
+        </div>
+        <hr style="border: 1px gainsboro solid;" class="wp"/>
+        <div class="wp">
+            <div class="main_left">
+                <div class="ml_up">
+                    <span style="font-size: 25px;margin-left: 30%">我的信息</span>
+                    <p><a href="/csMarket/userAlter" style="font-weight: bold;color: #00FFFF;margin-left: 80px">>>个人信息维护<<</a></p>
+                    <img src="" /><br/>
+                    <p>昵称：{{ name }}</p>
+                    <p>联系方式：{{ author.author_phone }}</p>
+                    <p>QQ:{{ author.author_qq }}
+                    <p>邮箱：{{ author.author_eamil}}</p>
+                </div>
+                <div class="ml_down">
+                    <span style="font-size: 25px;margin-left: 30%">CS 统计</span><br/><br/><br/>
+                    <h1>账单</h1><p>收入：{{ moneyin }}元</p><p>支出：{{ moneyout }}元</p>
+                    <hr style="height:1px;border:none;border-top:1px dashed #0066CC;width: 180px;margin: 0 auto" />
+                    <a href=""><h1>已交易</h1></a>
+                    <p>需求：{{ mxuok }}个</p><p>服务：{{mfwok}}个</p>
+                    <hr style="height:1px;border:none;border-top:1px dashed #0066CC;width: 180px;margin: 0 auto;" />
+                    <a href=""><h1>已发布</h1></a>
+                    <p>需求：{{ mxu }}个</p><p>服务：{{ mfw }}个</p>
+                    <hr style="height:1px;border:none;border-top:1px dashed #0066CC;width: 180px;margin: 0 auto;" />
+                    <a href=""><h1>进行中</h1></a>
+                    <p>需求：{{ mxuing }}个</p><p>服务：{{ mfwing }}个</p>
+                </div>
+            </div>
+
+            <div class="main_right">
+                <div class="xx_span">
+                    <a href="/csMarket/user"><span>&nbsp; 我的需求 &nbsp;</span></a>
+                    <a href="/csMarket/userFw"><span>&nbsp; 我的服务 &nbsp;</span></a>
+                    <a href="/csMarket/userAlter"><span>&nbsp; 信息维护 &nbsp;</span></a>
+                </div>
+                {% autoescape off %}
+                    {% if m %}
+                        <div class="main_right_me">
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">信息标题:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="title" name="title" placeholder="{{ m.m_name }}" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">交易价格:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="price" name="price" placeholder="{{ m.m_price }}" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">发 &nbsp;布&nbsp;方:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="name" name="name" value="{{ name }}" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">选择类别:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div class="mrmdiv_form1">
+                                <select name="bigcate" onChange="getCate()">
+                                    <option id="a" value="0">请选择所属大类别 </option>
+                                    <option id="a"  value="UI设计">UI设计 </option>
+                                    <option id="a"  value="Web开发">Web开发 </option>
+                                    <option id="a"  value="IOS开发">IOS开发 </option>
+                                    <option id="a"  value="安卓开发">安卓开发 </option>
+                                    <option id="a"  value="微信开发运营">微信开发运营</option>
+                                    <option id="a"  value="多媒体处理">多媒体处理</option>
+                                    <option id="a"  value="文案策划">文案策划</option>
+                                    <option id="a"  value="工业制作">工业制作</option>
+                                    <option id="a"  value="生活服务">生活服务</option>
+                                    <option id="a"  value="二手交易">二手交易</option>
+                                    <option id="a"  value="兼职实习">兼职实习 </option>
+                                </select>
+                                <SELECT NAME="smallcate">
+                                    <OPTION VALUE="0">请选择所属小类别 </OPTION>
+                                </SELECT>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">信息类型:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;font-size: 20px;" >
+                                <input type="text" id="mcate" name="mcate" value="" class="mrmspan2" placeholder=" &nbsp;&nbsp;&nbsp;{{m.m_cate_xuorfu }}" />
+                            </div>
+                        </div>
+
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">托&nbsp;&nbsp;管 方:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="toone" name="toone" placeholder=" {{ m.m_to }}" class="mrmspan2"/>
+                                <p style="font-size: 15px;color: red;font-weight: bold;">初次发布的信息默认托管给网站</p>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">已&nbsp;&nbsp;托 管:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;font-size: 20px;" >
+                                <input type="text" id="mtuo" name="mtuo" placeholder="{{ m.m_tuoing }}" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">交易成功:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;font-size: 20px;" >
+                                 <input type="text" id="mresult" name="mresult" placeholder="{{ m.m_result }}" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">信息内容:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <textarea rows="3" cols="4" name="content"  name="content" style="border: 1px #7f7e7e solid;width: 400px;height: 150px;">{{ m.m_content }}</textarea>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1"></span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="submit" name="submit" class="mrmspan3" value="提交" onclick="show()">
+                                <input type="reset" name="reset" class="mrmspan3" value="重置">
+                            </div>
+                        </div>
+                    </div>
+                    {% else%}
+                        <div class="main_right_me">
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">信息标题:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="title" name="title" placeholder="在此输入标题" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">交易价格:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="price" name="price" placeholder="999" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">发 &nbsp;布&nbsp;方:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="name" name="name" value="{{ name }}" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">选择类别:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div class="mrmdiv_form1">
+                                <select name="bigcate" onChange="getCate()">
+                                    <option id="a" value="0">请选择所属大类别 </option>
+                                    <option id="a"  value="UI设计">UI设计 </option>
+                                    <option id="a"  value="Web开发">Web开发 </option>
+                                    <option id="a"  value="IOS开发">IOS开发 </option>
+                                    <option id="a"  value="安卓开发">安卓开发 </option>
+                                    <option id="a"  value="微信开发运营">微信开发运营</option>
+                                    <option id="a"  value="多媒体处理">多媒体处理</option>
+                                    <option id="a"  value="文案策划">文案策划</option>
+                                    <option id="a"  value="工业制作">工业制作</option>
+                                    <option id="a"  value="生活服务">生活服务</option>
+                                    <option id="a"  value="二手交易">二手交易</option>
+                                    <option id="a"  value="兼职实习">兼职实习 </option>
+                                </select>
+                                <SELECT NAME="smallcate">
+                                    <OPTION VALUE="0">请选择所属小类别 </OPTION>
+                                </SELECT>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">信息类型:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;font-size: 20px;" >
+                                <input type="text" id="mcate" name="mcate" value="" class="mrmspan2" placeholder="请填写 需求 或者 服务">
+                            </div>
+                        </div>
+
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">托&nbsp;&nbsp;管 方:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="text" id="toone" name="toone" placeholder="superRoot" class="mrmspan2"/>
+                                <p style="font-size: 15px;color: red;font-weight: bold;">初次发布的信息默认托管给网站</p>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">已&nbsp;&nbsp;托 管:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;font-size: 20px;" >
+                                <input type="text" id="mtuo" name="mtuo" placeholder="请填写 是 或 否" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">交易成功:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;font-size: 20px;" >
+                                 <input type="text" id="mresult" name="mresult" placeholder="请填写 是 或 否" class="mrmspan2"/>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1">信息内容:&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                            <div style="float: left;" >
+                                <textarea rows="3" cols="4" name="content" name="content" style="border: 1px #7f7e7e solid;width: 400px;height: 150px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="mrmdiv">
+                            <div style="float: left;">
+                                <span class="mrmspan1"></span>
+                            </div>
+                            <div style="float: left;" >
+                                <input type="submit" name="submit" class="mrmspan3" value="提交" onclick="show()">
+                                <input type="reset" name="reset" class="mrmspan3" value="重置">
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endautoescape %}
+
+                <div class="main_right_see">
+                <div class="xx_span">
+                    <span>最近浏览</span>
+                </div>
+                {% autoescape off %}
+                    {% for jin in jin_list %}
+                        <div class="clist_one">
+                            <span> Title:{{ jin.m_name }} | 类别:{{ jin.m_smallcate }}({{ jin.m_bigcate }}) | 浏览量:{{ jin.m_seenum }} | 发布时间:{{ jin.m_time }} </span>
+                            <p><a href="/csMarket/userOne/{{ hot.m_num }}">查看</a></p>
+                        </div>
+                    {% endfor %}
+                {% endautoescape %}
+            </div>
+
+            <div class="main_right_like">
+                <div class="xx_span">
+                    <span>猜你喜欢</span>
+                </div>
+                {% autoescape off %}
+                    {% for like in like_list %}
+                        <div class="clist_one">
+                            <span> Title:{{ like.m_name }} | 类别:{{ like.m_smallcate }}({{ like.m_bigcate }}) | 浏览量:{{ like.m_seenum }} | 发布时间:{{ like.m_time }} </span>
+                            <p><a href="/csMarket/userOne/{{ hot.m_num }}">查看</a></p>
+                        </div>
+                    {% endfor %}
+                {% endautoescape %}
+            </div>
+
+            <div class="main_right_hote">
+                <div class="xx_span">
+                    <span>热门需求</span>
+                </div>
+
+                {% autoescape off %}
+                    {% for hot in hot_list %}
+                        <div class="clist_one">
+                            <span> Title:{{ hot.m_name }} | 类别:{{ hot.m_smallcate }}({{ hot.m_bigcate }}) | 浏览量:{{ hot.m_seenum}} | 发布时间:{{ hot.m_time }} </span>
+                            <p><a href="/csMarket/userOne/{{ hot.m_num }}">查看</a></p>
+                        </div>
+                    {% endfor %}
+                {% endautoescape %}
+
+            </div>
+
+            <div class="main_right_other">
+                <div class="mrm_gonglue">
+                    <div class="mro_span">
+                        <span>交易攻略</span>
+                    </div>
+                    <div class="clist_one">
+                         <span> AAAAAAAAAAAAAA</span>
+                         <p><a href="  " target="_blank">查看</a></p>
+                    </div>
+                    <div class="clist_one">
+                         <span> AAAAAAAAAAAAAA</span>
+                         <p><a href="  " target="_blank">查看</a></p>
+                     </div>
+                    <div class="clist_one">
+                         <span> AAAAAAAAAAAAAA</span>
+                         <p><a href="  " target="_blank">查看</a></p>
+                     </div>
+                    <div class="clist_one">
+                         <span> AAAAAAAAAAAAAA</span>
+                         <p><a href="  " target="_blank">查看</a></p>
+                     </div>
+                    <div class="clist_one">
+                         <span> AAAAAAAAAAAAAA</span>
+                         <p><a href="  " target="_blank">查看</a></p>
+                     </div>
+                </div>
+                <div class="mrm_ribao">
+                    <div class="mro_span">
+                        <span>CS日报</span>
+                    </div>
+					{% autoescape off %}
+                    {% for new in news_list %}
+                        <div class="clist_one">
+                            <span><a href="/bbs/newone{{ new.bbs_num }}"> {{ new.bbs_title }} </a></span>
+                        </div>
+                    {% endfor %}
+					{% endautoescape %}
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    
+    <div class="center1 wp">
+		<table width="100%" height="100%" border="1" cellpadding="0" cellspacing="0">
+		  	<tr class="c_table_tr1">
+			    <th><a href="/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></th>
+			    <th><a href="/blog/blog" >博客分类</a></th>
+				<th><a href="/download/download" >下载</a></th>
+			    <th><a href="/bbs/news" >CS 日报</a></th>
+			    <th><a href="/csMarket/market">CS Market</a></th>
+			    <th><a href="/csSearch/search" target="_blank">CS 搜索</a></th>
+		  	</tr>
+		  	<tr></tr>
+		  	<tr>
+		     	<td align="center">
+				   	<ul class="c1">
+						{% if name and pwd %}
+                        <li><a href=""  style="color: red; font-weight: bolder">{{ name }}</a></li>
+                        <li><a href="/logre/logout" style="color: red; font-weight: bolder">注销</a></li>
+                        {% else %}
+                            <li><a href="/logre/login"  style="color: red; font-weight: bolder">登录</a></li>
+                            <li><a href="/logre/regeister"  style="color: red; font-weight: bolder">注册</a></li>
+                            <li><a href="/logre/logout"  style="color: red; font-weight: bolder">注销</a></li>
+                        {% endif %}
+						<li><a href="/blog/blog">博客分类</a></li>
+						<li><a href="/bbs/bbs" >论&nbsp;&nbsp;&nbsp;&nbsp;坛</a></li>
+						<li><a href="/download/download">下&nbsp;&nbsp;&nbsp;&nbsp;载</a></li>
+						<li><a href="">CS Market</a></li>
+						<li><a href="/csSearch/search" target="_blank">CS 搜索</a></li>
+					</ul>
+		    	</td>
+		    	<td align="center">
+				   	<ul class="c2">
+						<li><a href="/blog/cateblog/0">云计算</a></li>
+						<li><a href="/blog/cateblog/1">移动开发</a></li>
+						<li><a href="/blog/cateblog/2">Web前端</a></li>
+						<li><a href="/blog/cateblog/3">数据库</a></li>
+						<li><a href="/blog/cateblog/4">图像/多媒体</a></li>
+						<li><a href="/blog/cateblog/5">系统运维</a></li>
+						<li><a href="/blog/cateblog/6">编程语言</a></li>
+						<li><a href="/blog/cateblog/7">互联网</a></li>
+						<li><a href="/blog/cateblog/8">咨询</a></li>
+					</ul>
+				</td>
+				<td align="center">
+				   	<ul class="c3">
+						<li><a href="/bbs/newcate/0">科技</a></li>
+						<li><a href="/bbs/newcate/1">互联网</a></li>
+						<li><a href="/bbs/newcate/2">传媒</a></li>
+						<li><a href="/bbs/newcate/3">娱乐</a></li>
+						<li><a href="/bbs/newcate/4">咨询</a></li>
+						<li><a href="/bbs/newcate/5">体育</a></li>
+						<li><a href="/bbs/newcate/6">其他</a></li>
+				   	</ul>
+				</td>
+				<td align="center">
+				   	<ul class="c4">
+						<li><a href="/download/onecateDown/0">软件工具</a></li>
+                        <li><a href="/download/onecateDown/1">电子文档</a></li>
+                        <li><a href="/download/onecateDown/2">Code片段</a></li>
+                        <li><a href="/download/onecateDown/3">视频教程</a></li>
+                        <li><a href="/download/onecateDown/5">开源项目</a></li>
+                        <li><a href="/download/onecateDown/4">其&nbsp; &nbsp; &nbsp; &nbsp;他</a></li>
+				   	</ul>
+				</td>
+				<td align="center">
+				  	<ul class="c5">
+						<li><a href="/csMarket/forall/2">Web开发</a></li>
+						<li><a href="/csMarket/forall/3">iOS开发</a></li>
+						<li><a href="/csMarket/forall/4">Android开发</a></li>
+						<li><a href="/csMarket/forall/5">微信开发</a></li>
+						<li><a href="/csMarket/forall/1">UI设计</a></li>
+						<li><a href="/csMarket/forall/8">工业制作</a></li>
+						<li><a href="/csMarket/forall/7">文案策划</a></li>
+						<li><a href="/csMarket/forall/6">多媒体处理</a></li>	
+						<li><a href="/csMarket/forall/9">生活服务</a></li>	
+						<li><a href="/csMarket/forall/10">二手交易</a></li>	
+						<li><a href="/csMarket/forall/110">兼职实习</a></li>
+					</ul>
+				</td>
+				<td align="center">
+				   	<ul class="c6">
+				   		<li><a href="">AAAA</a></li>
+						<li><a href="">BBBB</a></li>
+						<li><a href="">CCCC</a></li>
+						<li><a href="">DDDD</a></li>
+						<li><a href="">EEEE</a></li>
+						<li><a href="">FFFF</a></li>
+						<li><a href="">GGGG</a></li>
+						<li><a href="">HHHH</a></li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+			
+	</div>
+
+	<div class="buttom">
+		<div class="b_up">
+	       	<ul class="b_u_1">
+	           	<span>格言</span><br><br><br>
+	           	<li><a>&nbsp;优秀不够</a></li><br>
+	            <li><a>你必须无可替代</a></li>
+	        </ul>
+	        <ul class="b_u_2">
+	           	<span>友情链接</span><br><br><br>
+	           	<li><a href="">&nbsp;Cyan 小站</a></li><br>
+	            <li> <a href="">Thinkgamer 博客网</a></li><br>
+	        </ul>
+	        <ul class="b_u_3">
+	           	<span>&nbsp;&nbsp;联系我们</span><br><br><br>
+	           	<li><a>&nbsp;&nbsp;QQ:1923361654</a></li><br>
+	            <li><a>E-mail:Thinkgamer@163.com</a></li>
+	        </ul>
+      	</div>
+	    <div class="b_down">
+	       	<span >&nbsp;&nbsp;Copyright 2014-2015 &nbsp;|&nbsp;
+	 	           版本1.0&nbsp;|&nbsp;
+	        Made By CyanScikit</span>
+	    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+@charset "utf-8";
+* {
+	vertical-align: middle;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+html {
+	height: 100%;
+}
+ body {
+	font: normal 14px "微软雅黑";
+	color: #666666;
+	background:url(/static/img/login_bg.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:100%;
+ }
+
+.clear {
+	zoom: 1;
+}
+.clear:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+/*base_logre.html*/
+.logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 228px;
+	height: 50px;
+	margin-left: -134px;
+	margin-top: -320px;
+}
+.lrr-sub {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 228px;
+	height: 50px;
+	color: #FFFFFF;
+	margin-top: -270px;
+	margin-left: -50px;
+}
+.reg-log-main {
+	width: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+}
+.rlm_content {
+	width: 320px;
+	margin: 40px;
+}
+
+.rlm_content>p {
+	color: #b3b2b2;
+	margin-top: 20px;
+}
+
+.rlmcl_content {
+	width: 320px;
+	height: 43px;
+	line-height: 43px;
+	overflow: hidden;
+	border: 1px solid #e7e7e7;
+	margin-bottom: 15px;
+	position: relative;
+	border-radius: 3px;
+}
+
+.rlmcl_content span.placeholder {
+	position: absolute;
+	left: 12px;
+	top: 0;
+	color: #7f7e7e;
+	z-index: 1;
+}
+
+.rlmcl_content input {
+	background: none;
+	font-size: 16px;
+	position: relative;
+	z-index: 2;
+	padding-left: 15px;
+	width: 305px;
+}
+.log_reset {
+	width: 320px;
+	height: 50px;
+	position: relative;
+}
+.log_reset span {
+	display: block;
+	margin-top: 20px;
+}
+
+.log_reset span a {
+	color: #999999;
+}
+
+.log_reset span a:hover {
+	color: #005FB3;
+	cursor: help;
+}
+
+.hmc-copyright {
+	color: #000000;
+	position: absolute;
+	width: 600px;
+	text-align: center;
+	left: 50%;
+	bottom: 50px;
+	margin-left: -300px;
+}
+
+/*登录*/
+.login {
+	height: 350px;
+	margin-top: -210px;
+}
+
+/*注册*/
+.regist {
+	height: 440px;
+	margin-top: -220px;
+}
+
+.btn {
+	width: 320px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 16px;
+	color: #FFFFFF;
+	background: #1f7edd;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+
+.btn:hover {
+	background-color: #FF8500;
+	cursor: pointer;
+}

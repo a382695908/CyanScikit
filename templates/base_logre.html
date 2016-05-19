@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description " content="CyanScikit科技网(中文名三刺客网),高质量的科技展示和众包服务平台,也是科技爱好者和极客们交流,分享技术和科技最佳舞台。" />
+    <meta name="keywords" content="CyanScikit科技——不止有态度,IT科技网站,众包服务平台,包含CS 博客,CS 搜索,CS 日报,CS Market,资源下载,网络安全,极客活动,搜索引擎" />
+    <title>{% block title %}{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/base_css/base_logre.css" />
+</head>
+<body>
+    <script language="JavaScript">
+        {% if error %}
+            alert("{{ error }}");
+        {% endif %}
+    </script>
+
+    <a class="logo" href="/"><img src="/static/img/login.png" /></a>
+    <h2 class="lrr-sub">CYANSCIKIT</h2>
+
+    {%  block container%}
+    {% endblock %}
+
+    <div class="hmc-copyright"> Copyright 2014-2015  |  版本1.0 |  Made By CyanScikit </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/*通用*/
+*{
+	margin:0;
+	padding:0;
+	border:0;
+	list-style:none;
+	text-decoration:none;
+	font-size:12px;
+	font-family: "Comic Sans MS", "幼圆", "黑体", sans-serif;
+	color:#000000;
+	z-index:0;
+}
+.wp{
+	width: 960px;
+	margin: 0 auto;
+}
+body {
+	/*background-image: url(../img/cssou.jpg);
+	background-size: cover;*/
+	background-color:#A6FFFF;
+}
+/*头部*/
+.sousuo{
+	min-width: 960px;
+	height: 230px;
+}
+.ss1{
+}
+.ss1_span{
+	font-size: 45px;
+	color: #FFFFFF;
+	margin-left: 35%;
+	margin-top: 100px;
+}
+.ss2{
+	margin-top: 20px;
+	height: 40px;
+}
+.ss2 form{
+	margin-left: 20%;
+	height: 80px;
+}
+.ss2_input{
+	width: 500px;
+	height: 40px;
+	font-size: 15px;
+}
+.ss2_button{
+	line-height: 40px;
+	font-size: 20px;
+	background-color: #0099E5;
+}
+
+
+.main{
+	margin-top: 20px;
+	min-height: 400px;
+}
+
+.clist{
+	border:1px #555555 solid;
+	width: 100%;
+	height: 200px;
+	margin-top:20px;
+}
+.clist_one_title{
+	float:left;
+	width:100%;
+	height:30px;
+	background-color: #66B3FF;
+}
+.clist_one_title span{
+	font-size:25px;
+	line-height:30px;
+}
+.clist_one_content{
+	float:left;
+	width:100%;
+	height:170px;
+	overflow:hidden;
+}
+	
+.clist_mes{
+	border:1px #555555 solid;
+	width: 100%;
+	height: 100px;
+	margin-top:20px;
+}
+.clist_one_mestitle{
+	float:left;
+	width:100%;
+	height:30px;
+	background-color: #66B3FF;
+}
+.clist_one_mestitle span{
+	font-size:25px;
+	line-height:30px;
+}
+.clist_one_mescontent{
+	float:left;
+	width:100%;
+	height:70px;
+	overflow:hidden;
+}
+
+.clist_down{
+	border:1px #555555 solid;
+	width: 100%;
+	height: 50px;
+	margin-top:20px;
+}
+.clist_one_downtitle{
+	float:left;
+	width:100%;
+	height:50px;
+	background-color: #66B3FF;
+}
+.clist_one_downtitle span{
+	font-size:25px;
+	line-height:30px;
+}
+
+
+/*中间*/
+.center{
+	min-width: 960px;
+	width: 100%;
+	min-height: 300px;
+	background-color: #D7EEF9;
+}
+.center li{
+	line-height: 25px;
+}
+.center li:hover{
+	background-color: #2ECC71;
+}
+.c_table_tr1{
+	line-height: 35px;
+}
+.c_table_tr1 a{
+	font-size: 20px;
+}
+.c_table_tr1 th:hover{
+	background-color: #2ECC71;
+}
+.c1 a,.c2 a,.c3 a,.c4 a,.c5 a,.c6 a{
+	font-size: 15px;
+}
+
+
+
+
+
+
+/*底部*/
+.buttom{
+	min-width: 960px;
+	height: 180px;
+    background-color: #D7EEF9;
+}
+.b_up{
+	width:100%;
+	height:140px;
+	}
+.b_up span{
+	font-size:20px;
+	}
+.b_u_1{
+	float:left;
+	margin-left:10%;
+	list-style:none;
+	}
+.b_u_1 a{
+	text-decoration:none;
+	font-size:14px;
+	color:#00F
+	}
+.b_u_2{
+	float:right;
+	list-style:none;
+	margin-right:10%;
+	}
+.b_u_2 a{
+	text-decoration:none;
+	font-size:14px;
+	color:#00F
+	}
+.b_u_3{
+	float:right;
+	list-style:none;
+	margin-right:23%;
+	}
+.b_u_3 a{
+	text-decoration:none;
+	font-size:14px;
+	color:#00F
+	}
+	
+.b_down{
+	float:left;
+	width:100%;
+	height:40px;
+	}
+.b_down span{
+	margin-left:400px;
+	line-height: 3;
+    font-size: 16px;
+	}
+

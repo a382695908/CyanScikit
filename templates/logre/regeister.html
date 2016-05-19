@@ -1,0 +1,68 @@
+{% extends "base_logre.html" %}
+
+<script type="text/javascript">
+    function check() {
+        $username=document.getElementById('user').value;
+        $password=eval(document.getElementById('password')).value;
+        $repassword=eval(document.getElementById('repassword')).value;
+        $email=eval(document.getElementById('em')).value;
+        if(!/[a-zA-Z0-9_]+$/.test($username))
+        {
+            alert('用户名不合法');
+            return false;
+        }
+        if ($password.length == 0) {
+            alert('请填写密码');
+            return false;
+        }
+        else {
+			 if ($password.length >5)
+			 {
+                 if($password!=$repassword)
+                {
+                    alert("前后输入密码不一致");
+                    return false;
+                }
+             }
+            else
+             {
+                 alert('密码不可低于六位');
+                 return false;
+             }
+        }
+        if(!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($email))
+        {
+            alert('非法邮箱');
+            return false;
+        }
+    }
+</script>
+
+    {% block container %}
+    <div class="reg-log-main regist">
+        <form action="" method="post">
+            <div class="rlm_content">
+                <h2>请输入您的信息</h2><br/>
+                <div class="rlmcl_content phone">
+                    <input type="text" name="name" id="user" placeholder="用户名" />
+                </div>
+                <div class="rlmcl_content pwd">
+                    <input type="password" id="password" name="pwd" placeholder="密码" />
+                </div>
+                <div class="rlmcl_content pwd">
+                    <input type="password" id="repassword" name="repwd" placeholder="确认密码" />
+                </div>
+                <div class="rlmcl_content pwd">
+                    <input type="text" name="email" id="em" placeholder="邮箱">
+                </div>
+                <div class="log_reset">
+                    <button class="btn" id="enterlogin" onclick="return check()">注  册</button>
+                    <span>
+                        <a style="float:left;cursor:pointer" href="/index/index" target="_blank">随便看看<i></i></a>
+                        <a style="float:right;cursor:pointer" href="/logre/login" >账户登录<i></i></a>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% endblock %}
