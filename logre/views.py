@@ -9,19 +9,16 @@ import datetime
 @csrf_exempt
 def login(request):
     global referrer,name
-    if request.method == "POST":
-        name = request.POST.get('account')
+    if request.method == "POST":         #如果是post请求的话
+        name = request.POST.get('account')       #获取用户名和密码
         pwd = request.POST.get('password')
-        print "1",name,pwd
-        #验证用户名和密码
-        if not Author.objects.filter(author_name = name):
+        if not Author.objects.filter(author_name = name): #验证用户名和密码
             return render_to_response("logre/login.html", {"error": "该用户不存在，请先注册"})
         elif not Author.objects.filter(author_name = name,author_pwd=pwd):
             return render_to_response("logre/login.html", {"error": "密码不正确，请重新输入"})
-        #将信息写入session表
-        request.session["username"] = name
+        request.session["username"] = name        #将用户和密码信息写入session表
         request.session["pwd"] = pwd
-        print  "2",request.session["username"],request.session["pwd"]
+        # print  request.session["username"],request.session["pwd"]
         #手动设置，value=0即关闭浏览器就失效
         if not request.POST.get('check'):
             request.session.set_expiry(0)
@@ -31,10 +28,10 @@ def login(request):
             return render_to_response("index.html",{'name':name,'pwd':pwd})
     else:
         try:
-            #获取网页访问来源
-            referrer=request.META['HTTP_REFERER']
-            return render_to_response("logre/login.html", {})
+            referrer=request.META['HTTP_REFERER']  #获取网页访问来源
         except:
+            pass
+        finally:
             return render_to_response("logre/login.html", {})
 
 @csrf_exempt

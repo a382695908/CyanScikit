@@ -1,8 +1,5 @@
 {% extends "base_logre.html" %}
-
-{% block title %}
-欢迎登陆CyanScikit科技网站
-{% endblock %}
+{% block title %}欢迎登陆CyanScikit科技网站{% endblock %}
 {% block container %}
 <div class="reg-log-main login">
         <div class="rlm_content">
@@ -13,9 +10,7 @@
                 <div class="rlmcl_content pwd">
                     <input type="password" name="password"  id="pwd" placeholder="密码" />
                 </div>
-                <p>
-                    <input type="radio" name="check" />记住密码
-                </p>
+                <p> <input type="radio" name="check" />记住密码  </p>
                 <div class="log_reset">
                     <button class="btn" id="enterlogin" onClick="check()">登　录</button>
                     <span>
