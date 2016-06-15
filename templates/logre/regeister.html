@@ -43,16 +43,16 @@
             <div class="rlm_content">
                 <h2>请输入您的信息</h2><br/>
                 <div class="rlmcl_content phone">
-                    <input type="text" name="name" id="user" placeholder="用户名（只能是字母数字组成）" />
+                    <input type="text" name="name" id="user" required="" placeholder="用户名（只能是字母数字或者下划线组成）" />
                 </div>
                 <div class="rlmcl_content pwd">
-                    <input type="password" id="password" name="pwd" placeholder="密码（最少6位）" />
+                    <input type="password" id="password" required="" name="pwd" placeholder="密码（最少6位）" />
                 </div>
                 <div class="rlmcl_content pwd">
-                    <input type="password" id="repassword" name="repwd" placeholder="确认密码" />
+                    <input type="password" id="repassword" required="" name="repwd" placeholder="确认密码" />
                 </div>
                 <div class="rlmcl_content pwd">
-                    <input type="text" name="email" id="em" placeholder="邮箱">
+                    <input type="text" name="email" id="em" placeholder="邮箱，非必填项">
                 </div>
                 <div class="log_reset">
                     <button class="btn" id="enterlogin" onclick="return check()">注  册</button>

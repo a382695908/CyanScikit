@@ -1,6 +1,6 @@
 #coding:utf-8
-from django.shortcuts import render,render_to_response
-from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from logre.models import Author
 import datetime
@@ -25,7 +25,7 @@ def login(request):
         try:
             return HttpResponseRedirect(referrer)
         except:
-            return render_to_response("index.html",{'name':name,'pwd':pwd})
+            return render_to_response("index/index.html", {'name':name, 'pwd':pwd})
     else:
         try:
             referrer=request.META['HTTP_REFERER']  #获取网页访问来源
@@ -56,7 +56,7 @@ def regeister(request):
             #return HttpResponseRedirect(referrer  + name)
             return HttpResponseRedirect(referrer)
         except:
-            return render_to_response("index.html",{'name':name,'pwd':pwd})
+            return render_to_response("index/index.html", {'name':name, 'pwd':pwd})
     else:
         try:
             #获取网页访问来源

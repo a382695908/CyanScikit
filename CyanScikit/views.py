@@ -14,7 +14,7 @@ def index(request):
         name = request.session["username"]
         pwd = request.session["pwd"]
 
-        t = loader.get_template('index.html')
+        t = loader.get_template('index/index.html')
         c = Context({
             "blog_list":blog_list,
             "resource_list":resource_list,
@@ -24,7 +24,7 @@ def index(request):
         })
         return HttpResponse(t.render(c))
     except:
-        t = loader.get_template('index.html')
+        t = loader.get_template('index/index.html')
         blog_list = Blog.objects.all().order_by('-blog_time')[:4]
         resource_list = Resource.objects.all().order_by('res_seenum')[:10]
         c = Context({
