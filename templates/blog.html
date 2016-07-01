@@ -86,18 +86,27 @@
                             <div class="cone_span"><span >{{ blog.blog_title }}</span></div>
                             <div class="cb1p">
                                 <p>
-                                    {{ blog.blog_content }}
+                                    {{ blog.blog_content |safe }}
                                 </p>
                             </div>
                         </a>
                     </div>
                 {% endfor %}
-
-                {% if not ifmore %}
-                <div class="clist_more">
-					<a href="/blog/more"><span>&nbsp;加载更多&nbsp;</span></a>
-				</div>
-                {% endif %}
+                <div class="paginator">
+                    <ul class="paginator-flicker">
+                    {% if blog_list.has_previous %}
+                        <a href="?page={{ blog_list.previous_page_number }}"><span>&laquo;上一页</span></a>
+                    {% else %}
+                        <span>&laquo;上一页&nbsp;&nbsp;&nbsp;</span>
+                    {% endif %}
+                    {{ blog_list.number }}/{{ blog_list.paginator.num_pages }}
+                    {% if blog_list.has_next %}
+                           <a href="?page={{ blog_list.next_page_number }}"><span>&nbsp;&nbsp;&nbsp;下一页&raquo;</span></a>
+                    {% else %}
+                         <span>下一页&raquo;</span>
+                    {% endif %}
+                    </ul>
+                </div>
 			</div>
             {% endautoescape %}
 			

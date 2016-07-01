@@ -1,9 +1,9 @@
 {% extends "base_index.html" %}
-
+{% load staticfiles %}
 {% block center %}
 <div class="center wp">
 			
-    <div class="c_zhaomu"><a href="/index/index"><img src="/static/img/head.png" /></a></div>  {# 招聘图片 #}
+    <div class="c_zhaomu"><a  href="/index/index"><img src="/static/img/head.png" /></a></div>  {# 招聘图片 #}
 			
     <div id="gla">
 		<div id="gla_box">
@@ -45,7 +45,7 @@
         <div class="clist_one">
             <a href="/blog/oneblog/{{ blog.blog_id }}">
             <div class="cone_span"><span >标题：{{ blog.blog_title }}</span></div>
-            <div class="cb1p"><p>{{   blog.blog_content }}</p></div>
+            <div class="cb1p"><p>{{   blog.blog_content |safe}}</p></div>
             </a>
         </div>
         {% endfor %}

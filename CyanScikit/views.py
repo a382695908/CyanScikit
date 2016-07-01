@@ -4,7 +4,6 @@ from django.template import loader,Context
 from blog.models import Blog
 from bbs.models import bbs
 from download.models import Resource
-from logre.models import Author
 
 def index(request):
     blog_list = Blog.objects.all().order_by('-blog_time')[:4]

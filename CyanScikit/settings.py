@@ -66,7 +66,7 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
+            'context_processors': [  #上下文处理器，每个页面都会调用到
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -119,6 +119,9 @@ STATICFILES_DIRS = (
     ('img',os.path.join(STATIC_ROOT,'img').replace('\\','/') ),
     ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ),
 )
+# STATICFILES_DIRS=(
+#     os.path.join(BASE_DIR,'static')
+# )
 
 #文件上传配置
 MEDIA_URL =  '/uploads/'

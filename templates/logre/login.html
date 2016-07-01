@@ -5,7 +5,7 @@
         <div class="rlm_content">
             <form action="" method="post">
                 <div class="rlmcl_content phone">
-                    <input type="text" name="account" required=""  id="user" placeholder="用户名" />
+                    <input type="text" name="account" required=""  id="user" placeholder="用户名" value="{{ request.META.HTTP_REFERER }}" />
                 </div>
                 <div class="rlmcl_content pwd">
                     <input type="password" name="password" required=""  id="pwd" placeholder="密码" />

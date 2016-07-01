@@ -125,29 +125,19 @@
 	font-size: 18px;
 }
 
-.clist_more{
-	width: 100%;
-	margin-left: 350px;
+/*上下页*/
+.paginator{
+	margin-left: 40%;
 	margin-top: 10px;
 }
-.clist_more span{
-	font-size: 20px;
-	width: 300px;
-	height: 100px;
-	background-color: aqua;
-    -webkit-border-radius: 100px / 50px;
-    -moz-border-radius: 100px / 50px;
-    border-radius: 100px / 50px;
+.paginator-flicker{
+	font-size: 18px;
+	color: #ff6347;
 }
-.clist_more span:hover{
-	font-size: 23px;
-	background-color: #E67E22;
-	cursor: pointer;
-    -webkit-border-radius: 100px / 50px;
-    -moz-border-radius: 100px / 50px;
-    border-radius: 100px / 50px;
+.paginator-flicker span{
+	font-size: 18px;
+	color: #ff6347;
 }
-
 /*底部*/
 .buttom{
 	min-width: 960px;

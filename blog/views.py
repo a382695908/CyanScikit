@@ -3,15 +3,24 @@ from django.shortcuts import render,render_to_response
 from django.http import HttpResponse
 from django.template import loader,Context
 from blog.models import Blog,Cate
+from django.core.paginator import Paginator,InvalidPage,EmptyPage,PageNotAnInteger
 
 # Create your views here.
 
 def blog(request):
-    blog_list = Blog.objects.all().order_by("-blog_time")[:8]
+    blog_list = Blog.objects.all().order_by("-blog_time").distinct()
+    #定义分页器
+    paginator = Paginator(blog_list,8)
+    try:
+        page =  int(request.GET.get('page',1))
+        blog_list=paginator.page(page)
+    except(EmptyPage,InvalidPage,PageNotAnInteger):
+                blog_list=paginator.page(1)
+
     try:
         name = request.session["username"]
         pwd = request.session["pwd"]
-
+#locals()函数的作用是将当前函数的全部局部变量做一个封装传递过去
         t = loader.get_template('blog.html')
         c = Context({
             "blog_list":blog_list,

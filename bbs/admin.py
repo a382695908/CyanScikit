@@ -19,6 +19,8 @@ class bbsAdmin(admin.ModelAdmin):
     search_fields = ('bbs_title','bbs_num','bbs_time','bbs_author','bbs_cate','bbs_seenum','bbs_content',)
     fields = ('bbs_title','bbs_num','bbs_time','bbs_author','bbs_cate','bbs_seenum','bbs_content',)
     ordering = ('-bbs_time',)
+    list_display_links = ('bbs_title','bbs_time','bbs_author','bbs_cate',)
+    list_editable = ('bbs_num','bbs_seenum',)
 
     #引入媒体文件 文本编辑器
     class Media:

@@ -4,7 +4,6 @@ from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from logre.models import Author
 import datetime
-
 # Create your views here.
 @csrf_exempt
 def login(request):
