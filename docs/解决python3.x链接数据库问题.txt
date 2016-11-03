@@ -1,0 +1,27 @@
+最近在学习Django框架，在连接MySQL的时候遇到了一些问题，主要原因是Django默认链接Mysql的方式MySQLdb还不支持Python3.5，而Mysql官方提供的Mysqlconnecter有不支持最新的Django框架，真不知道为什么更新的那么慢。没有办法，在网上找到了一种MySQLdb的替代品pymysql，他的设置方法跟MySQLdb一样，现将使用方法说明如下： 
+  首先，安装pymysql，使用pip命令：
+  pip install pymysql1
+
+安装成功之后，就可以使用了，在setting.py中对数据库进行设置，设置方法与MySQLdb相同：
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'weihu02',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+设置完成后，还有最后的关键一步才能使用： 
+在站点的__init__.py中添加如下代码：
+
+import pymysql
+pymysql.install_as_MySQLdb()1
+
+以上步骤都做完之后，就可以链接Mysql数据库了。
+
+另外，当Mysql中已经存在建好的数据库时，可以使用如下命令自动生成于数据库对应的Django模型：
+
+python manage.py inspectdb >app_name/models.py
