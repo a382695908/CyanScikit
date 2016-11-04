@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'market',
     'talking',
     'blog',
+    'news',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,7 +112,18 @@ USE_TZ = True
 
 #配置静态文件目录
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'static')
-)
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),'../static')
+#STATICFILES_DIRS=(
+#    os.path.join(BASE_DIR,'static')
+#)
+STATICFILES_DIRS = (
+     ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),
+     ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
+     ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ),
+     ('uploads',os.path.join(STATIC_ROOT,'uploads').replace('\\','/') ),
+ )
 
+
+#文件上传配置
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')

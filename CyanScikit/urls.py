@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^item/', include('item.urls'), name='item'),
     url(r'^market/', include('market.urls'), name='market'),
     url(r'^talking/', include('talking.urls'), name='talking'),
+    url(r'^news/', include('news.urls'), name='news'),
 ]
