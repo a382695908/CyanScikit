@@ -6,6 +6,6 @@ CyanScikit是一个综合类的科技网站，完成于2016/03
 
 #环境介绍
 python 3.4<br>
-django1.9.0<br>
+django1.8.6<br>
 mysql 5.6<br>
 
