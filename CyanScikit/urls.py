@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from CyanScikit.upload import upload_image
+
 
 urlpatterns = [
+    url(r'^csadmin/uploads/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
+    url(r"^uploads/(?P<path>.*)$", \
+        "django.views.static.serve", \
+        {"document_root":settings.MEDIA_ROOT,}),
+
     url(r'^csadmin/', include(admin.site.urls)),
     url(r'^index/', include('index.urls'), name='idnex'),
     url(r'^blog/', include('index.urls'), name='blog'),
@@ -24,4 +32,5 @@ urlpatterns = [
     url(r'^market/', include('market.urls'), name='market'),
     url(r'^talking/', include('talking.urls'), name='talking'),
     url(r'^news/', include('news.urls'), name='news'),
+
 ]
