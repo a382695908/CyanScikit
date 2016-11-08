@@ -12,6 +12,6 @@ class news(models.Model):
     news_content = models.TextField(blank=False, verbose_name="新闻内容")
     # python 2.7中使用的是__unicode__
     def __str__(self):
-        return self.new_title
+        return self.news_title
     class Meta:
         db_table = 'news'

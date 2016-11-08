@@ -16,16 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
+from django import views
 from CyanScikit.upload import upload_image
-
-
 urlpatterns = [
-    url(r'^csadmin/uploads/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
-    url(r"^uploads/(?P<path>.*)$", \
-        "django.views.static.serve", \
-        {"document_root":settings.MEDIA_ROOT,}),
-
-    url(r'^csadmin/', include(admin.site.urls)),
+    url(r'^admin/uploads/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
+    url(r"^uploads/(?P<path>.*)$",views.static.serve,{"document_root":settings.MEDIA_ROOT,}),
+    #http://www.imooc.com/qadetail/98920
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^index/', include('index.urls'), name='idnex'),
     url(r'^blog/', include('index.urls'), name='blog'),
     url(r'^item/', include('item.urls'), name='item'),
