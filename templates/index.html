@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}<title>CyanScikit首页</title>{% endblock %}
+{% block css %}
+<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/static/css/awesome/css/font-awesome.min.css"><!--图标字体-->
+<link type="text/css" rel="stylesheet" href="/static/css/base.css">
+<link type="text/css" rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+{% block center %}
+<div id="main">
+    <div class="main_img_show">
+      <div id="featured-area"> 
+        <ul> 
+            <li><img src="/static/images/one.jpg"/></li>
+            <li><img src="/static/images/two.jpg"/></li>
+            <li><img src="/static/images/three.jpg"/></li>
+            <li><img src="/static/images/two.jpg"/></li>
+        </ul>
+        <a href="javascript:void(0)" class="ban_l_btn"></a>
+        <a href="javascript:void(0)" class="ban_r_btn"></a>
+      </div>
+    </div>
+    <div class="info">
+      <div class="fl info_news">
+        <div class="info_about_our">
+        <h3><span>About us</span></h3>
+          <img class="fl" src="/static/images/aboutus.jpg">
+              
+              <p>小阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三方阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三方阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三方阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三度第三方</p>
+        </div>
+        <div class="info_cases">
+          <div class="fl info_cases_hot">
+            <h3><span>最新事件</span></h3>
+            <ul>
+              <li><a>额度放松放松彻底废弃父亲俄方达到擦的程度的稳定的分</a></li>
+              <li><a>地方vfdvfdvsd</a></li>
+              <li><a>彻底释放鬼斧神工</a></li>
+              <li><a>是对方是否违反</a></li>
+              <li><a>测试得出的我十点</a></li>
+            </ul>
+            <p class="fr"><a href="/news/home">查看更多>></a></p>
+          </div>
+          <div class="fr info_cases_work">
+            <h3><span>外包类别</span></h3>
+            <div class="row">
+            <ul>
+              <li><a>xSD阿德小阿三</a></li>
+              <li><a>下啊擦的</a></li>
+              <li><a>小阿三的</a></li>
+              <li><a>阿迪王</a></li>
+              <li><a>擦擦擦</a></li>
+            </ul>
+            <ul>
+              <li><a>xSD阿德小阿三</a></li>
+              <li><a>下啊擦的</a></li>
+              <li><a>小阿三的</a></li>
+              <li><a>阿迪王</a></li>
+              <li><a>擦擦擦</a></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fr info_weibo">
+        <h3>最新微博动态</h3>
+        <div>
+          <iframe height="500" width="90%" scrolling="no" frameborder="0" src="/index/getweibo/"></iframe>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/ecmascript" src="/static/js/jquery.roundabout-1.0.min.js"></script><!--图片切换插件-->
+<script type="text/ecmascript" src="/static/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#featured-area ul').roundabout({
+        easing: 'easeOutInCirc',
+        duration: 600,
+		autoplay:true,
+		autoplayDuration: 3000,
+		autoplayPauseOnHover: true,
+        minScale: 0.7,
+        btnPrev: ".ban_r_btn", // 右按钮
+        btnNext: ".ban_l_btn" // 左按钮
+    });
+});
+</script>
+<script type="text/javascript" src="/static/js/base.js"></script>
+{% endblock %}

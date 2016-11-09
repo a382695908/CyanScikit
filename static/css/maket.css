@@ -1,0 +1,28 @@
+@charset "utf-8";
+#mainContent h3,.typedetail h3{ padding-bottom:6px; border-bottom:1px solid #CCC; border-radius:5px; }
+ #mainContent h3 span,.typedetail h3 span{ font-size:18px; color:#000;border-radius:3px; font-weight:bold;padding-bottom:6px; border-bottom:2px solid #09C;}
+
+/*此处为maket.html部分内容*/
+.maket_news,.typedetail{ width:60%; overflow:hidden; padding-left:10px; padding-right:10px; margin-left:6%; border-right:1px solid #CCCCCC;}
+#mainContent ul{ list-style:none; margin-left:15px; margin-bottom:10px; padding-right:40px;}
+#mainContent ul li{ margin-bottom:15px; border-bottom:1px solid #CCCCCC; padding-top:5px;}
+#mainContent ul li p{ font-size:14px; color:#333; font-weight:700;}
+#mainContent ul li p span{ color:#666; font-weight:400; margin:0px 8px 0px 8px;}
+
+
+.maket_type{ width:30%; margin-bottom:150px;}
+.maket_type h3{ font-size:16px; color:#000; font-weight:bold; padding-top:5px;}
+.maket_type .types{ margin-left:10%; margin-bottom:15px;}
+.maket_type .types ul{ list-style:none; text-align:center;}
+.maket_type .types ul li{ width:250px; text-align:center; height:35px; line-height:35px; text-align:center; border:1px solid #CCC; margin-top:8px; border-radius:10px;}
+.maket_type .types ul li a{ color:#666; font-size:16px; font-weight:700; display: block; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s;}
+.maket_type .types ul li a:hover{ text-decoration:none; background:#E2E2E2; opacity:0.8; color:#F63;  border-radius:10px; -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); transform: rotate(360deg); border: #CCC 1px solid;}
+#callBackPager{ text-align:center;}
+
+/*maket_type.html处*/
+.typedetail{ padding:2px 40px 2px 40px;}
+.typedetail span{font-size:14px; color:#666; font-weight:400;}
+.typedetail p{font-size:16px; color:#666; font-weight:bold; letter-spacing:1px; line-height:24px;}
+.type_cases ul{ list-style:decimal; margin-left:60px;}
+.type_cases ul li{ letter-spacing:1px; line-height:24px;}
+.type_mamager,.type_describle,.type_cases{ width:100%; overflow:hidden;}

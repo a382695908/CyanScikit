@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-#from market.views import ()
+from market.views import (
+    home,cate,
+)
 
 urlpatterns = [
-    #url(r'^home/$',home),
+    url(r'^home/$',home),
+    url(r'^cate/$',cate),
 ]

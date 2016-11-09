@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-#from news.views import ()
+from news.views import (
+    home,
+)
 
 urlpatterns = [
-    #url(r'^home/$',home),
+    url(r'^home/$',home),
 ]

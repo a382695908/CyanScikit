@@ -24,7 +24,7 @@ urlpatterns = [
     #http://www.imooc.com/qadetail/98920
     url(r'^admin/', include(admin.site.urls)),
     url(r'^index/', include('index.urls'), name='idnex'),
-    url(r'^blog/', include('index.urls'), name='blog'),
+    url(r'^blog/', include('blog.urls'), name='blog'),
     url(r'^item/', include('item.urls'), name='item'),
     url(r'^market/', include('market.urls'), name='market'),
     url(r'^talking/', include('talking.urls'), name='talking'),

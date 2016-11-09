@@ -1,0 +1,49 @@
+@charset "utf-8";
+/*blog.html部分*/
+#callBackPager{ text-align:center;}
+#callBackPagination{ padding:2px 25px 2px 25px;float:left; width:60%; margin-left:5%; border-right:1px solid #CCC;}
+#mainContent ul{ list-style:none;}
+#mainContent ul li{ margin-bottom:10px; background:#F5F5F5; border-radius:5px; box-shadow: 0 0 15px #CCCCCC;}
+#mainContent ul h3{ font-size:20px; font-weight:600; padding-top:5px; color:#798388;}
+#mainContent ul h3:hover{ color:#F63;}
+#mainContent ul span{ color:#999;}
+#mainContent ul p{line-height:30px;letter-spacing:1px; font-size:15px; color:#666;}
+
+.blog_table{ width:80%; margin:auto;}
+.blogtime{ width:30%;}
+.main_types{width:30%; margin-right:5%;}
+.main_types{ margin-bottom:30px;}
+.main_types h3{ font-size:16px; font-weight:bold; padding-left:20px;}
+.main_types ul{ list-style:none; overflow:hidden;}
+.main_types div:last-child ul li{ margin-top:10px; height:35px; width:65%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden; padding-top:10px; margin-left:6%; border-radius:5px;}
+.main_types div:last-child ul li a{ color:#999;}
+.main_types div:last-child ul li:hover{ border-bottom:2px solid #F33; border-radius:5px;}
+.main_types div:last-child ul li a:hover{ text-decoration:none;}
+.main_types div:first-child ul li{margin-top:15px; height:40px; padding-top:10px; width:35%; margin-left:10%; border-radius:5px; border-bottom:2px dotted #CCCCCC;}
+.main_types div:first-child ul li a{ height:30px; color:#999;}
+.main_types div:first-child ul li a:hover{ text-decoration:none; color:#F33;}
+.main_types div:first-child ul li:hover{ border-bottom:2px solid #F33;}
+
+
+/*blog_one_page.index部分 item_one_page,talking处相似*/
+.blog_page_left{ width:60%; margin-left:5%; padding:2px 10px 2px 10px; border-right:1px solid #CCCCCC;}
+.blog_page_left p{ letter-spacing:1px; line-height:24px;}
+.blog_page_left h3{padding-bottom:10px; margin-bottom:10px; border-radius:5px; border-bottom:1px solid #CCC; width:80%;}
+.blog_page_left h3 span{ color:#000; padding-bottom:10px; font-size:18px; border-radius:3px; border-bottom:2px solid #09C;}
+.blog_page_blog,.blog_page_discussion,.blog_page_talking{ overflow:hidden; margin-bottom:20px; width:100%; padding-left:5%; padding-right:5%; }
+.blog_p{color:#999; margin-right:60px;}
+.blog_page_blog div{ width:100%; overflow:auto; padding-top:10px;}
+.blog_page_blog div p{ text-indent:2em;}
+
+.blog_page_discussion ul{ list-style:none; padding-top:10px;}
+.blog_page_discussion ul li{}
+.blog_page_discussion ul li p:first-child{ font-weight:bold;}
+
+
+.blog_page_talking form{ overflow:auto;}
+.blog_page_talking div input{ border-radius:3px; height:35px;  margin-bottom:6px;}
+.blog_page_talking div:first-child input{ width:300px;}
+.blog_page_talking div:nth-child(2) input{ width:340px;}
+.blog_page_talking div:nth-child(3){ overflow:hidden; font-size:16px; width:100%;}
+.blog_page_talking div:nth-child(3) textarea{ height:120px; width:100%;}
+.btn{ width:160px;}

@@ -17,8 +17,10 @@ from django.conf.urls import url
 
 from index.views import (
     home,
+    getweibo,
 )
 
 urlpatterns = [
     url(r'^home/$',home),
+    url(r'^getweibo/$',getweibo),
 ]

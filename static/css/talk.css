@@ -1,0 +1,19 @@
+@charset "utf-8";
+#callBackPagination{ overflow:auto; padding-left:10%; padding-right:10%; border-bottom:2px dotted #CCCCCC;}
+#mainContent ul{ list-style:none;}
+#mainContent ul li{ margin-bottom:25px; overflow:auto;}
+#mainContent ul li div{ padding:10px 20px 10px 20px; border-bottom:1px solid #999; box-shadow:0 10px 10px #666666; width:90%; margin:auto;}
+#mainContent ul li div h4{ font-size:16px; font-weight:bold; color:#000;}
+#mainContent ul li div h4 span{ font-size:12px; margin-left:10px;color:#999;}
+#mainContent ul li div p{ text-indent:2em;}
+#callBackPager{ text-align:center;}
+
+.talk_page_talking{ overflow:hidden; margin-bottom:20px; padding-top:10px; width:72%; margin: 0 auto}
+.talk_page_talking form{ overflow:auto;}
+.talk_page_talking div input{ border-radius:3px; height:35px;  margin-bottom:6px;}
+.talk_page_talking div:first-child input{ width:300px;}
+.talk_page_talking div:nth-child(2) input{ width:340px;}
+.talk_page_talking div:nth-child(3){ overflow:hidden; font-size:16px; width:100%;}
+.talk_page_talking div:nth-child(3) textarea{ height:120px; width:100%;}
+.btn{ width:160px;}
+

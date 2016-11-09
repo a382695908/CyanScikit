@@ -1,0 +1,33 @@
+@charset "utf-8";
+#callBackPagination{ overflow:auto; padding-left:10%; padding-right:10%;}
+#mainContent ul{ list-style:none;}
+#mainContent ul li{ margin-bottom:25px; overflow:auto; }
+#mainContent ul li img{ margin-right:15px; width:130px;}
+#mainContent ul li div{ padding:20px 20px 20px 20px; background:#F5F5F5; box-shadow: 0 0 10px #999999; -webkit-box-shadow: 0 0 10px #999999; -moz-box-shadow: 0 0 10px #999999; height:132px; width:80%;}
+#mainContent ul li div{ color:#666; letter-spacing:1px; line-height:24px; text-indent:2em;}
+#callBackPager{ text-align:center;}
+
+
+
+/*item_one_page.index部分,此处有较多blog_one_page.html相似*/
+.item_page_blog,.item_page_discussion,.item_page_talking{ overflow:hidden; margin-bottom:20px; width:70%; margin: 0 auto}
+.item_p{color:#999; margin-left:40px;}
+.item_page_blog h3{ padding-top:20px;}
+.item_page_blog img{ margin-bottom:20px; margin-right:50px;}
+.item_page_blog div{ width:100%; overflow:auto; border-top:1px solid #CCCCCC; padding-top:10px;}
+.item_page_blog div p{ text-indent:2em; line-height:24px; letter-spacing:1px;}
+
+.item_page_discussion ul{ list-style:none; padding-top:10px;}
+.item_page_discussion ul li p:nth-child(2){line-height:24px; letter-spacing:1px; text-indent:2em;}
+.item_page_discussion ul li p:first-child{ font-weight:bold;}
+.item_page_discussion h3{padding-bottom:10px; margin-bottom:10px; border-radius:5px; border-bottom:1px solid #CCC; width:80%;}
+.item_page_discussion h3 span{ color:#000; padding-bottom:10px; font-size:18px; border-radius:3px; border-bottom:2px solid #09C;}
+
+.item_page_talking form{ overflow:auto;}
+.item_page_talking div input{ border-radius:3px; height:35px; margin-bottom:6px;}
+.item_page_talking div:first-child input{ width:300px;}
+.item_page_talking div:nth-child(2) input{ width:340px;}
+.item_page_talking div:nth-child(3){ overflow:auto; font-size:16px; width:100%;}
+.item_page_talking div:nth-child(3) textarea{ height:120px; width:100%;}
+.btn{ width:160px}
+
