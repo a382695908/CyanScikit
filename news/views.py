@@ -1,11 +1,29 @@
 #-*-coding:utf-8-*-
 from django.shortcuts import render,render_to_response
 from news.models import news
-# Create your views here.
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 def home(request):
     news_list = news.objects.all()
-    count_news = len(news_list)
-    return render_to_response("news.html",{
-        "news_list":news_list,
-        "count_news":count_news,
+    paginator = Paginator(news_list, 10)  # Show 25 contacts per page
+    page = request.GET.get('page')
+    try:
+        all_news = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        all_news = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        all_news = paginator.page(paginator.num_pages)
+    return render(request, 'news.html', {
+        'all_news': all_news,
+    })
+
+def one(request,id):
+    news_mess = news.objects.get(news_id=id)
+    #update seenum
+    news_mess.news_seenum = news_mess.news_seenum + 1
+    news_mess.save()
+    return  render_to_response("news_one.html",{
+        "news_mess":news_mess,
     })

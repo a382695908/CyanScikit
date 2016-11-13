@@ -10,15 +10,17 @@
 {% block center %}
 <div id="main">
     <div class="item_page_blog">
-       <h3 class="fl">this is title<br><br><span class="item_p">2016-12-02 12:0:0 |类别</span></h3>
+      <h3 class="fl">{{ item_mess.item_title }}<br><br><span class="item_p">发表时间：{{ item_mess.item_time }} | 浏览次数：{{ item_mess.item_seenum }}</span></h3>
       <img class="fr" src="/static/images/logo.jpg">
       <div>
-        <p>
-        那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对部分曾经的那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对
-        </p>
+        {% autoescape off %}<p>{{ item_mess.item_content }}</p>{% endautoescape %}
       </div>
     </div>
     <div class="item_page_discussion">
+      <hr style="border: 1px #e4b9b9 solid;">
+      <span class="updown_span"><a href="/item/home" class="fl">返回项目</a><a href="/index/home" class="fr">返回首页</a></span>
+      <br>
+      <hr style="border: 1px #e4b9b9 solid;">
       <h3><span>评论区：</span></h3>
        <ul>
          <li>

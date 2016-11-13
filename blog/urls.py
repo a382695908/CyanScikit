@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 
 from blog.views import (
-    home,one,
+    home,one,onecate,
 )
 
 urlpatterns = [
     url(r'^home/$',home),
-    url(r'^one/$',one),
+    url(r'^one/(\d+)/$',one),
+    url(r'^onecate/(\w+)/$',onecate),
 ]

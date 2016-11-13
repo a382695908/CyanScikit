@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}<title>Blog：</title>{% endblock %}
+{% block title %}<title>CyanScikit博客</title>{% endblock %}
 {% block css %}
 <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="/static/css/awesome/css/font-awesome.min.css"><!--图标字体-->
@@ -11,16 +11,24 @@
 
 <div id="main">
     <div class="fl blog_page_left">
+    {% autoescape off %}
     <div class="blog_page_blog">
-      <h3><span>this is title</span></h3>
-      <span class="fr blog_p">2016-12-02 12:0:0|类别</span>
+      <h3><span>{{ blog_mess.blog_title }}</span></h3>
+      <span class="fr blog_p">
+          发表时间：{{ blog_mess.blog_time }}&nbsp;&nbsp;/
+          类别：{{ blog_mess.blog_category }}&nbsp;&nbsp;/
+          阅读次数：{{ blog_mess.blog_seenum }}
+      </span>
       <div>
-        <p>
-        那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对部分曾经的那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部这句话不对
-        </p>
+        <p>{{ blog_mess.blog_content }}</p>
       </div>
     </div>
+    {% endautoescape %}
     <div class="blog_page_discussion">
+    <hr style="border: 1px #e4b9b9 solid;">
+    <span class="updown_span"><a href="/blog/home" class="fl">返回博客</a><a href="/index/home" class="fr">返回首页</a></span>
+    <br>
+    <hr style="border: 1px #e4b9b9 solid;">
       <h3><span>评论区：</span></h3>
        <ul>
          <li>
@@ -50,24 +58,17 @@
        <div>
          <h3>类别归档</h3>
          <ul>
-           <li class="fl"><a href="#">集群分分类(20篇)</a></li>
-           <li class="fl"><a href="#">集群分集群分类(20篇)</a></li>
-           <li class="fl"><a href="#">集群群分类(20篇)</a></li>
-           <li class="fl"><a href="#">集群分集群分类(20篇)</a></li>
-           <li class="fl"><a href="#">集群分集群分类(20篇)</a></li>
-           <li class="fl"><a href="#">集群分集类(20篇)</a></li>
-           <li class="fl"><a href="#">集群分集群分类(20篇)</a></li>
+           {% for cate in cates %}
+           <li class="fl"><a href="/blog/onecate/{{ cate.cate_name }}">{{ cate.cate_name }}</a></li>
+           {% endfor %}
          </ul>
        </div>
        <div>
          <h3>热门推荐</h3>
          <ul>
-           <li><a href="#">*****集群分集群分集群分集群分集群分集群分集群分集群分*****</a></li>
-           <li><a href="#">**********</a></li>
-           <li><a href="#">**********</a></li>
-           <li><a href="#">**********</a></li>
-           <li><a href="#">**********</a></li>
-           <li><a href="#">**********</a></li>
+           {% for hot in hot_list %}
+           <li><a href="/blog/one/{{ hot.blog_id }}">{{ hot.blog_title }} | {{ hot.blog_seenum }}</a></li>
+           {% endfor %}
          </ul>
        </div>
     </div>

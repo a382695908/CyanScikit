@@ -1,9 +1,10 @@
 @charset "utf-8";
 *{ margin:0px; padding:0px; font-family:"Microsoft YaHei UI"; font-size:14px;}
 #header,#main,#footer{ width:100%; margin:auto; display:block; min-width:960px;}
-#main{ overflow:auto;}
+#main{ overflow:hidden;}
 a{ cursor:pointer; color:#000;}
 a:hover{ text-decoration:none;}
+*{ margin: 0px; padding: 0px;}
 /*通用量*/
 .fl{ float:left;}
 .fr{ float:right;}
@@ -31,6 +32,5 @@ nav{ z-index:10000; width:100%;}
 .footer_menus ul li a{ text-indent:0em; color:#666; font-size:13px; font-weight:400;}
 .footer_menus ul li a:hover{ text-decoration:none;}
 .footer_code{ text-align:center; margin-top:10px; margin-right:10%;}
-.footer_code img{ width:130px; height:110px;}
-.footer_copyright{ width:100%;  overflow:hidden; vertical-align:middle; color:#666; font-size:13px; text-align:center;
- margin-top:27px;}
+.footer_code img{ width:128px; height:129px;}
+.footer_copyright{ width:100%;  overflow:hidden; vertical-align:middle; color:#666; font-size:13px; text-align:center;margin-top:27px;}

@@ -6,7 +6,7 @@ from news.models import news
 # Create your views here.
 def home(request):
     wcate_list = wcate.objects.all()
-    news_list = news.objects.all()[:5]
+    news_list = news.objects.all().order_by("-news_time")[:6]
     return render_to_response("index.html",{
         "wcate_list":wcate_list,
         "news_list":news_list,

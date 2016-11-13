@@ -17,8 +17,10 @@ from django.conf.urls import url
 
 from news.views import (
     home,
+    one,
 )
 
 urlpatterns = [
     url(r'^home/$',home),
+    url(r'^one/(\d+)/$',one),
 ]

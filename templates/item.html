@@ -10,7 +10,31 @@
 {% block center %}
 <div id="main">
     <div id="callBackPagination" class="piece">
-        <div id="mainContent"></div>
+        <div id="mainContent">
+            <ul>
+            {% autoescape off %}
+                {% for item in all_item %}
+                <li>
+                    <a href="/item/one/{{ item.item_id }}"><img class="fl" src="/static/images/logo.jpg">
+                        <div class="item_info fl"><p>{{ item.item_content  | truncatewords:"15" }}</p></div>
+                    </a>
+                </li>
+                {% endfor %}
+            {% endautoescape %}
+            </ul>
+            <div class="updown">
+                {% if all_item.has_previous %}
+                <span class="fl up">
+                    <a href="?page={{ all_item.previous_page_number }}">上一页</a>
+                </span>
+                {% endif %}
+                {% if all_item.has_next %}
+                <span class="fr down">
+                    <a href="?page={{ all_item.next_page_number }}">下一页</a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
         <div id="callBackPager"></div>
     </div>
 </div>
@@ -19,34 +43,4 @@
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/extendPagination.js"></script>
 <script type="text/javascript" src="/static/js/base.js"></script>
-<script type="text/javascript">
-//调用分页
-$(function(){
-	    var total=200,showcounts=11,showlimits=7;
-        var totalCount = Number(total), showCount = showcounts,
-                limit = Number(showlimits) ;
-        createTable(1, limit, totalCount);
-        $('#callBackPager').extendPagination({
-            totalCount: totalCount,
-            showCount: showCount,
-            limit: limit,
-            callback: function (curr, limit, totalCount) {
-                createTable(curr, limit, totalCount);
-            }
-        });
-    function createTable(currPage, limit, total) {
-        var html = [], showNum = limit;
-        if (total - (currPage * limit) < 0) showNum = total - ((currPage - 1) * limit);
-        html.push(' <ul>');
-        for (var i = 1; i <= showNum; i++) {
-            html.push('<li><a href="/item/one"><img class="fl" src="/static/images/logo.jpg"><div class="item_info fl"><p>啊师傅说解释多空分水岭地那次事啊师傅说解释多空分水岭地那次事件的理念啊师傅说解释多空分水岭地那次事件的理念啊师傅说解释多空分水岭地那次事件的理念件的理念</p></div>');
-            html.push('</a></li>');
-        }
-        html.push('</ul>');
-        var mainObj = $('#mainContent');
-        mainObj.empty();
-        mainObj.html(html.join(''));
-    }
-});
-</script>
 {% endblock %}

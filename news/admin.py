@@ -10,7 +10,7 @@ class adminNews(admin.ModelAdmin):
     # 添加search bar，在指定的字段中search
     search_fields = ("news_title", "news_id", "news_seenum", "news_time",)
     # 页面右边会出现相应的过滤器选项
-    list_filter = ("news_title", "news_id", "news_seenum", "news_time",)
+    list_filter = (  "news_seenum", "news_time",)
     # 排序
     ordering = ("-news_time",)
     # 引入媒体文件 文本编辑器

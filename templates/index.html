@@ -39,7 +39,8 @@
             <h3><span>最新事件</span></h3>
             <ul>
               {% for new in news_list %}
-                <li><a>{{ new.news_title }}</a></li>
+                <li><a href="/news/one/{{ new.news_id }}">{{ new.news_title }}</a></li>
+{#                  <hr style="border: 1px">#}
               {% endfor %}
             </ul>
             <p class="fr"><a href="/news/home">查看更多>></a></p>
