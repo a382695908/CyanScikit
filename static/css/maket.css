@@ -21,7 +21,7 @@
 
 /*maket_type.html处*/
 .typedetail{ padding:2px 40px 2px 40px;}
-.typedetail span{font-size:14px; color:#666; font-weight:400;}
+.typedetail span{font-size:14px; color:#666; font-weight:400;text-indent: 10px}
 .typedetail p{font-size:16px; color:#666; font-weight:bold; letter-spacing:1px; line-height:24px;}
 .type_cases ul{ list-style:decimal; margin-left:60px;}
 .type_cases ul li{ letter-spacing:1px; line-height:24px;}

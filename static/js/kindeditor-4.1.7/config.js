@@ -50,5 +50,11 @@ KindEditor.ready(function(K) {
 		uploadJson: '/admin/uploads/kindeditor',
 	});
 });
-
+KindEditor.ready(function(K) {
+	K.create('textarea[name="wcate_people"]', {
+		width : "800px",
+        height : "500px",
+		uploadJson: '/admin/uploads/kindeditor',
+	});
+});
 

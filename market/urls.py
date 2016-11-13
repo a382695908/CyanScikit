@@ -21,5 +21,5 @@ from market.views import (
 
 urlpatterns = [
     url(r'^home/$',home),
-    url(r'^cate/$',cate),
+    url(r'^cate/(\d+)/$',cate),
 ]

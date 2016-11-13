@@ -11,10 +11,10 @@
     <div class="main_img_show">
       <div id="featured-area"> 
         <ul> 
-            <li><img src="/static/images/one.jpg"/></li>
-            <li><img src="/static/images/two.jpg"/></li>
-            <li><img src="/static/images/three.jpg"/></li>
-            <li><img src="/static/images/two.jpg"/></li>
+            <li><a href="http://blog.csdn.net/gamer_gyt" target="_blank"><img src="/static/images/one.png"/></a></li>
+            <li><a href="https://github.com/thinkgamer" target="_blank"><img src="/static/images/two.png"/></a></li>
+            <li><a href="http://weibo.com/234654758" target="_blank"><img src="/static/images/three.png"/></a></li>
+            <li><a href="http://weibo.com/u/5333034962" target="_blank"><img src="/static/images/four.png"/></a></li>
         </ul>
         <a href="javascript:void(0)" class="ban_l_btn"></a>
         <a href="javascript:void(0)" class="ban_r_btn"></a>
@@ -25,18 +25,22 @@
         <div class="info_about_our">
         <h3><span>About us</span></h3>
           <img class="fl" src="/static/images/aboutus.jpg">
-              
-              <p>小阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三方阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三方阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三方阿三的方法让更多人会很难很难不敢反驳他还不如回复你被人给别人的沟通广东人个人图书馆如果不通过白天干活一边放过他个人提供的认同感成都市政府热狗热狗传达犯错误的服务擦俄方床位费成为故哈贷款和财富有多少差别城市的还是不是能看见的身份的身份都非常受到犯得上发生长度第三度第三方</p>
+              <p>CyanScikit科技工作室是由沈阳航空航天大学的高阳团于2015年创建的品牌，致力于打造一个针对大学生的
+                  技术交易平台，平台包括web开发，网络数据采集，创意设计，文案撰写，图像设计LOGO制作，课程设计和
+                  毕业设计，同时兼顾二手交易（数据电子，图书，鞋服等）和代办中心（代取快递，代取外卖，代上课等），
+                  目前还在处于筹备和开发阶段，但是旗下所属的CyansCikit自营即工作室的外包部分已经取得了众多的成就，
+                  包括帮助他人完成毕设，数据采集和课程设计，web网站的开发等，同时成员的一个大数据分析项目在国家计
+                  算机作品大赛中斩获三等奖，其下的一个大学生创新项目斩获辽宁省大学生创新项目A类，其取得的成就是有
+                  目共睹的，目前致力于论文的撰写和工作室网站的开发，欢迎有志之士加入我们。
+              </p>
         </div>
         <div class="info_cases">
           <div class="fl info_cases_hot">
             <h3><span>最新事件</span></h3>
             <ul>
-              <li><a>额度放松放松彻底废弃父亲俄方达到擦的程度的稳定的分</a></li>
-              <li><a>地方vfdvfdvsd</a></li>
-              <li><a>彻底释放鬼斧神工</a></li>
-              <li><a>是对方是否违反</a></li>
-              <li><a>测试得出的我十点</a></li>
+              {% for new in news_list %}
+                <li><a>{{ new.news_title }}</a></li>
+              {% endfor %}
             </ul>
             <p class="fr"><a href="/news/home">查看更多>></a></p>
           </div>
@@ -44,18 +48,9 @@
             <h3><span>外包类别</span></h3>
             <div class="row">
             <ul>
-              <li><a>xSD阿德小阿三</a></li>
-              <li><a>下啊擦的</a></li>
-              <li><a>小阿三的</a></li>
-              <li><a>阿迪王</a></li>
-              <li><a>擦擦擦</a></li>
-            </ul>
-            <ul>
-              <li><a>xSD阿德小阿三</a></li>
-              <li><a>下啊擦的</a></li>
-              <li><a>小阿三的</a></li>
-              <li><a>阿迪王</a></li>
-              <li><a>擦擦擦</a></li>
+                {% for wcate in wcate_list %}
+                    <li><a href="/market/cate/{{ wcate.wcate_id }}">{{ wcate.wcate_name }}</a></li>
+                {% endfor %}
             </ul>
             </div>
           </div>
@@ -64,7 +59,7 @@
       <div class="fr info_weibo">
         <h3>最新微博动态</h3>
         <div>
-          <iframe height="500" width="90%" scrolling="no" frameborder="0" src="/index/getweibo/"></iframe>
+          <iframe height="700" width="100%" scrolling="no" frameborder="0" src="/index/getweibo/"></iframe>
         </div>
       </div>
     </div>

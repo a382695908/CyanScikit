@@ -6,6 +6,7 @@ from django.db import models
 class wcate(models.Model):
     wcate_name = models.CharField(blank=False, max_length=30, verbose_name="外包类别")  # False表示此项不能为空
     wcate_addtime = models.DateTimeField(blank=True, verbose_name="类别添加时间")
+    wcate_people = models.TextField(blank=False, default="",verbose_name="负责人介绍")
     wcate_id = models.IntegerField(blank=False, verbose_name="类别编号", unique=True)  # 保证编号唯一
     wcate_content = models.TextField(blank=False, verbose_name="类别介绍")
     # python 2.7中使用的是__unicode__

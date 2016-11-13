@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}<title>Market Type:</title>{% endblock %}
+{% block title %}<title>Market Type:{{ ow_mess.wcate_name }}</title>{% endblock %}
 {% block css %}
 <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="/static/css/awesome/css/font-awesome.min.css"><!--图标字体-->
@@ -8,24 +8,20 @@
 {% endblock %}
 
 {% block center %}
+{% autoescape off %}
 <div id="main">
     <div class="fl typedetail">
         <h3><span>类别名字</span></h3>
         <div class="type_manager">
-           <p>类别负责人：<span>迟迟第三方</span></p>
-           <p>负责人简介：<span>分的高分的jfk的肯德基妇女来说上课了几分努力减肥能否顺利的金发女郎但是十多年发布会结束的上的风景还是棱角分明分手的好风景上的讲话覅发贺卡jfk分电分的高分的jfk的肯德基妇女来说上课了几分努力减肥能否顺利的金发女郎但是十多年发布会结束的上的风景还是棱角分明分手的好风景上的讲话覅发贺卡话费合适的空间的客觉得盛大积分户端还是</span></p>
+           <p>支持该类别服务时间：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ ow_mess.wcate_addtime }}</span></p>
+           <p>负责人简介：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ ow_mess.wcate_people }}</span></p>
         </div>
         <div class="type_describle">
-           <p>类别简介：<br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分的高分的jfk的肯德基妇女来说上课了几分努力减肥能否顺利的金发女郎但是十多年发布会结束的上的风景还是棱角分明分手的好风景上的讲话覅发贺卡jfk分电话费合适的空间的客户端还分的高分的jfk的肯德基妇女来说上课了几分努力减肥能否顺利的金分的高分的jfk的肯德基妇女来说上课了几分努力减肥能否顺利的金发女郎但是十多年发布会结束的上的风景还是棱角分明分手的好风景上的讲话覅发贺卡发女郎但是十多年发布会结束的上的风景还是棱角分明分手的好风景上的讲话覅发贺卡jfk分电话费合适的空间的客户端还</span></p>
+           <p>类别简介：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ ow_mess.wcate_content }}</span></p>
         </div>
         <div class="type_cases">
            <p>对接案例：</p>
            <ul>
-              <li>分的高分的jfk的肯德基妇女来说上课了几分</li>
-              <li>分的高分的jfk的肯德基妇女来说上课了几分</li>
-              <li>分的高分的jfk的肯德基妇女来说上课了几分</li>
-              <li>分的高分的jfk的肯德基妇女来说上课了几分</li>
-              <li>分的高分的jfk的肯德基妇女来说上课了几分</li>
               <li>分的高分的jfk的肯德基妇女来说上课了几分</li>
            </ul>
         </div>
@@ -33,22 +29,15 @@
     <div class=" fr maket_type">
        <h3>外包类别</h3>
       <div class="types fl">
-            <ul>
-              <li><a href="maket_type.html">软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
-              <li><a>软件开发外包类</a></li>
+          <ul>
+              {% for wcate in wcate_list %}
+                <li><a href="/market/cate/{{ wcate.wcate_id }}">{{ wcate.wcate_name }}</a></li>
+              {% endfor %}
             </ul>
        </div>
     </div>
 </div>
-
+{% endautoescape %}
 <script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/base.js"></script>

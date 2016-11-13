@@ -19,16 +19,9 @@
        <h3>外包类别</h3>
       <div class="types fl">
             <ul>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
-              <li><a href="/market/cate">软件开发外包类</a></li>
+              {% for wcate in wcate_list %}
+                <li><a href="/market/cate/{{ wcate.wcate_id }}">{{ wcate.wcate_name }}</a></li>
+              {% endfor %}
             </ul>
        </div>
     </div>

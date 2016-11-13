@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	 $("#bs-example-navbar-collapse-1 .nav li").on('click','#bs-example-navbar-collapse-1 .nav',function(){
+	 $("#bs-example-navbar-collapse-1 .nav li").on('click',function(){
 	 	console.log($(this));
 	    $(this).addClass("active").siblings().removeClass("active");
 	})

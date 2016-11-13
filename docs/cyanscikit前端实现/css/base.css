@@ -1,0 +1,36 @@
+@charset "utf-8";
+*{ margin:0px; padding:0px; font-family:"Microsoft YaHei UI"; font-size:14px;}
+#header,#main,#footer{ width:100%; margin:auto; display:block; min-width:960px;}
+#main{ overflow:auto;}
+a{ cursor:pointer; color:#000;}
+a:hover{ text-decoration:none;}
+/*通用量*/
+.fl{ float:left;}
+.fr{ float:right;}
+/*header部分*/
+.header_top{ background:url(../images/data.png); background-size:cover;height:330px;}
+.logo{ width:100%; padding-top:90px; text-align:center;}
+.logo img{ border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; box-shadow:0 0 15px #FF3333; -webkit-box-shadow:0 0 15px #FF3333; -moz-box-shadow:0 0 15px #FF3333;}
+.logo p{ margin-top:20px; font-size:30px; letter-spacing:1px; font-weight:bolder; color:#666;}
+   /*header中navbar部分*/
+.header_nav{ background:#fff;}
+nav{ z-index:10000; width:100%;}
+.container-fluid{  background:#F5F5F5;}
+.header_nav_container ul{ width:100%; text-align:center;}
+.header_nav_container ul li{ width:72.2px; float:none; display:inline-block;}
+.header_nav_container ul li a{ font-weight:500;}
+.navbar-nav  li:nth-child(6),.navbar-nav  li:nth-child(7){ width:50px;}
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{ background-color:#F5F5F5; color:#000; text-shadow:0 0 5px #999; -webkit-text-shadow:0 0 5px #999; -moz-text-shadow:0 0 5px #999; border-bottom:2px solid #C60;}
+.fix{ position:fixed;}
+
+/*foorter部分*/
+#footer{ background:#000; overflow:hidden;  height:260px;}
+.footer_menus{ width:100%; color:#666; overflow:hidden; margin-top:50px;}
+.footer_menus ul{ width:15%; float:left; list-style:none; margin-left:7%; }
+.footer_menus ul li{ color:#666; margin-top:8px; font-size:15px; font-weight:bold;}
+.footer_menus ul li a{ text-indent:0em; color:#666; font-size:13px; font-weight:400;}
+.footer_menus ul li a:hover{ text-decoration:none;}
+.footer_code{ text-align:center; margin-top:10px; margin-right:10%;}
+.footer_code img{ width:130px; height:110px;}
+.footer_copyright{ width:100%;  overflow:hidden; vertical-align:middle; color:#666; font-size:13px; text-align:center;
+ margin-top:27px;}

@@ -21,5 +21,5 @@ home,one,
 
 urlpatterns = [
     url(r'^home/$',home),
-    url(r'^one/$',one),
+    url(r'^one/(\d+)/$',one),
 ]

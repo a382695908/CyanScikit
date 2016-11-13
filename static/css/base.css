@@ -11,15 +11,15 @@ a:hover{ text-decoration:none;}
 .header_top{ background:url(../images/data.png); background-size:cover;height:330px;}
 .logo{ width:100%; padding-top:90px; text-align:center;}
 .logo img{ border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; box-shadow:0 0 15px #FF3333; -webkit-box-shadow:0 0 15px #FF3333; -moz-box-shadow:0 0 15px #FF3333;}
-.logo p{ margin-top:20px; font-size:30px; letter-spacing:1px; font-weight:bolder; color:#666;}
+.logo p{ margin-top:20px; font-size:30px; letter-spacing:1px; font-weight:bolder; color: #222222;}
    /*header中navbar部分*/
 .header_nav{ background:#fff;}
 nav{ z-index:10000; width:100%;}
 .container-fluid{  background:#F5F5F5;}
 .header_nav_container ul{ width:100%; text-align:center;}
 .header_nav_container ul li{ width:72.2px; float:none; display:inline-block;}
-.header_nav_container ul li a{ font-weight:500;}
-.navbar-nav  li:nth-child(6),.navbar-nav  li:nth-child(7){ width:50px;}
+.header_nav_container ul li a{ font-weight:600;}
+.navbar-nav  li:nth-child(7),.navbar-nav  li:nth-child(8 ){ width:50px;}
 .navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{ background-color:#F5F5F5; color:#000; text-shadow:0 0 5px #999; -webkit-text-shadow:0 0 5px #999; -moz-text-shadow:0 0 5px #999; border-bottom:2px solid #C60;}
 .fix{ position:fixed;}
 
