@@ -1,13 +1,4 @@
-$(document).ready(function()
-{
-	 $("#bs-example-navbar-collapse-1 .nav li").on('click',function(){
-	 	console.log($(this));
-	    $(this).addClass("active").siblings().removeClass("active");
-	})
-
-
-
-	$(window).scroll(function(){
+$(window).scroll(function(){
 	  var top=$(window).scrollTop();
 	  if(top>=340){
 		  $("#nav").addClass("fix");
@@ -15,7 +6,5 @@ $(document).ready(function()
 		  }else{
 			  $("#nav").removeClass("fix");}
 	});
-
-});
 
 

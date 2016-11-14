@@ -13,6 +13,7 @@
 .item_page_blog,.item_page_discussion,.item_page_talking{ overflow:hidden; margin-bottom:20px; width:70%; margin: 0 auto}
 .item_p{color:#999; margin-left:40px;}
 .item_page_blog h3{ padding-top:20px;}
+.item_page_blog{ -webkit-text-shadow:0 0 10px #5bc0de; -moz-text-shadow:0 0 5px #999; border:1px #faf2cc solid ;}
 .item_page_blog img{ margin-bottom:20px; margin-right:50px;}
 .item_page_blog div{ width:100%; overflow:auto; border-top:1px solid #CCCCCC; padding-top:10px;}
 .item_page_blog div p{ text-indent:2em; line-height:24px; letter-spacing:1px;}
@@ -35,10 +36,4 @@
 .item_info{ overflow: hidden}
 
 .updown {width:94%;}
-/*.up{ width:60px; height:40px; font-size:40px; text-align:center; color:#FFF; line-height:20px; border-radius:25px; background:#999;border:1px solid #999;}*/
-/*.up:hover{ text-shadow:0 0 20px #fff;  -webkit-text-shadow:0 0 20px #fff;-moz-text-shadow:0 0 20px #fff; box-shadow:0 0 10px #999; -webkit-box-shadow:0 0 10px #999; -moz-box-shadow:0 0 10px #999;}*/
-/*.down{ width:60px; height:40px; font-size:40px; text-align:center; color:#FFF; line-height:20px; border-radius:25px; background:#999;border:1px solid #999;}*/
-/*.down:hover{ text-shadow:0 0 20px #fff;  -webkit-text-shadow:0 0 20px #fff;-moz-text-shadow:0 0 20px #fff; box-shadow:0 0 10px #999; -webkit-box-shadow:0 0 10px #999; -moz-box-shadow:0 0 10px #999;}*/
-/*.updown_span {width: 300px}*/
-/*.updown_span a { font-size: 20px;}*/
-/*.updown_span a:hover{ color: tomato}*/
+.nav li:nth-child(3){background-color:#F5F5F5; color:#000; text-shadow:0 0 5px #999; -webkit-text-shadow:0 0 5px #999; -moz-text-shadow:0 0 5px #999; border-bottom:2px solid #C60; }

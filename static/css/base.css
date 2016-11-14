@@ -21,7 +21,7 @@ nav{ z-index:10000; width:100%;}
 .header_nav_container ul li{ width:72.2px; float:none; display:inline-block;}
 .header_nav_container ul li a{ font-weight:600;}
 .navbar-nav  li:nth-child(7),.navbar-nav  li:nth-child(8 ){ width:50px;}
-.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{ background-color:#F5F5F5; color:#000; text-shadow:0 0 5px #999; -webkit-text-shadow:0 0 5px #999; -moz-text-shadow:0 0 5px #999; border-bottom:2px solid #C60;}
+/*.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{ background-color:#F5F5F5; color:#000; text-shadow:0 0 5px #999; -webkit-text-shadow:0 0 5px #999; -moz-text-shadow:0 0 5px #999; border-bottom:2px solid #C60;}*/
 .fix{ position:fixed;}
 
 /*foorter部分*/

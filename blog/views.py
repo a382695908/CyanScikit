@@ -17,7 +17,7 @@ def getcate():
 
 def home(request):
     blog_list = blog.objects.all()
-    paginator = Paginator(blog_list, 5)  # Show 25 contacts per page
+    paginator = Paginator(blog_list, 8)  # Show 25 contacts per page
     page = request.GET.get('page')
     try:
         all_blog = paginator.page(page)

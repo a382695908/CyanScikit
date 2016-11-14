@@ -26,3 +26,5 @@
 .type_cases ul{ list-style:decimal; margin-left:60px;}
 .type_cases ul li{ letter-spacing:1px; line-height:24px;}
 .type_mamager,.type_describle,.type_cases{ width:100%; overflow:hidden;}
+
+.nav li:nth-child(6){background-color:#F5F5F5; color:#000; text-shadow:0 0 5px #999; -webkit-text-shadow:0 0 5px #999; -moz-text-shadow:0 0 5px #999; border-bottom:2px solid #C60; }
