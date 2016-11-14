@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}<title>Market Type:{{ ow_mess.wcate_name }}</title>{% endblock %}
+{% block title %}<title>Market Message</title>{% endblock %}
 {% block css %}
 <link type="text/css" rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="/static/css/awesome/css/font-awesome.min.css"><!--图标字体-->
@@ -11,26 +11,18 @@
 {% autoescape off %}
 <div id="main">
     <div class="fl typedetail">
-        <h3><span>类别名字——{{ ow_mess.wcate_name }}</span></h3>
+        <h3><span>案例具体信息</span></h3>
         <div class="type_manager">
-           <p>支持该类别服务时间：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ ow_mess.wcate_addtime }}</span></p>
-           <p>负责人简介：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ ow_mess.wcate_people }}</span></p>
+           <p>案例名称：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ oneex_mess.ex_title }}</span></p>
+           <p>交易完成时间：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ oneex_mess.ex_time }}</span></p>
         </div>
         <div class="type_describle">
-           <p>类别简介：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ ow_mess.wcate_content }}</span></p>
+           <p>案例描述：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ oneex_mess.ex_content }}</span></p>
         </div>
-        <div class="type_cases">
-           <p>对接案例：</p>
-           <ul>
-           {% if ex_list %}
-               {% for ex in ex_list %}
-                <li><a href="/market/oneex/{{ ex.ex_id }}">{{ ex.ex_title }}</a></li>
-               {% endfor %}
-           {% else %}
-                <p style="font-size: 20px;color: red">暂无对接案例</p>
-           {% endif %}
-           </ul>
-        </div>
+        <hr style="border: 1px #e4b9b9 solid;">
+        <span class="updown_span"><a href="/market/home" class="fl">返回Market</a><a href="/index/home" class="fr">返回首页</a></span>
+        <br>
+        <hr style="border: 1px #e4b9b9 solid;">
     </div>
     <div class=" fr maket_type">
        <h3>外包类别</h3>

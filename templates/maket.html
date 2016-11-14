@@ -11,7 +11,34 @@
 <div id="main">
     <div class=" fl maket_news">
        <div id="callBackPagination" class="piece">
-        <div id="mainContent"></div>
+        <div id="mainContent">
+            <h3><span>精彩案例</span></h3>
+            <ul>
+                {% autoescape off %}
+                    {% for exam in examples %}
+                        <li><p>标题：<span><a href="/market/oneex/{{ exam.ex_id }}">{{ exam.ex_title }}</a></span></p>
+                            <p>类别：<span>{{ exam.ex_category }}</span>
+                            成交金额：<span>{{ exam.ex_money }}￥</span>
+                            满意度：<span>{{ exam.ex_gree }}%</span>
+                            浏览量：<span>{{ exam.ex_seenum }}</span><p>
+                            简介：<span>{{ exam.ex_content | truncatewords:"3"}}</span>
+                        </p></li>
+                    {% endfor %}
+                {% endautoescape %}
+            </ul>
+            <div class="updown">
+                {% if examples.has_previous %}
+                <span class="fl up">
+                    <a href="?page={{ examples.previous_page_number }}">上一页</a>
+                </span>
+                {% endif %}
+                {% if examples.has_next %}
+                <span class="fr down">
+                    <a href="?page={{ examples.next_page_number }}">下一页</a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
         <div id="callBackPager"></div>
       </div>
     </div>
@@ -31,34 +58,4 @@
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/extendPagination.js"></script>
 <script type="text/javascript" src="/static/js/base.js"></script>
-<script type="text/javascript">
-//调用分页
-$(function(){
-	    var total=200,showcounts=11,showlimits=6;
-        var totalCount = Number(total), showCount = showcounts,
-                limit = Number(showlimits) ;
-        createTable(1, limit, totalCount);
-        $('#callBackPager').extendPagination({
-            totalCount: totalCount,
-            showCount: showCount,
-            limit: limit,
-            callback: function (curr, limit, totalCount) {
-                createTable(curr, limit, totalCount);
-            }
-        });
-    function createTable(currPage, limit, total) {
-        var html = [], showNum = limit;
-        if (total - (currPage * limit) < 0) showNum = total - ((currPage - 1) * limit);
-        html.push(' <h3><span>精彩案例</span></h3><ul>');
-        for (var i = 1; i <= showNum; i++) {
-            html.push('<li><p>类别：<span>AAAAAA</span>成交金额：<span>100000￥</span>满意度：<span>90%</span><p>简介：<span>城市公共健康更是公开初露端倪覅的那家饭馆的寒风酷暑的回复开放时间不发生必须在客场击败的基础城市的比赛的放开手脚不卖弄风骚城市公共健康更是公开初露端倪覅的那家饭馆的寒风酷暑的回复开放时间不发生必须在客场击败的基础城市的比赛的放开手脚不卖弄</span></p>');
-            html.push('</li>');
-        }
-        html.push('</ul>');
-        var mainObj = $('#mainContent');
-        mainObj.empty();
-        mainObj.html(html.join(''));
-    }
-});
-</script>
 {% endblock %}

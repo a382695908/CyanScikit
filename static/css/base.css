@@ -34,3 +34,11 @@ nav{ z-index:10000; width:100%;}
 .footer_code{ text-align:center; margin-top:10px; margin-right:10%;}
 .footer_code img{ width:128px; height:129px;}
 .footer_copyright{ width:100%;  overflow:hidden; vertical-align:middle; color:#666; font-size:13px; text-align:center;margin-top:27px;}
+
+
+.up{ width:60px; height:40px; font-size:40px; text-align:center; color:#FFF; line-height:20px; border-radius:25px; background:#999;border:1px solid #999;}
+.up:hover{ text-shadow:0 0 20px #fff;  -webkit-text-shadow:0 0 20px #fff;-moz-text-shadow:0 0 20px #fff; box-shadow:0 0 10px #999; -webkit-box-shadow:0 0 10px #999; -moz-box-shadow:0 0 10px #999;}
+.down{ width:60px; height:40px; font-size:40px; text-align:center; color:#FFF; line-height:20px; border-radius:25px; background:#999;border:1px solid #999;}
+.down:hover{ text-shadow:0 0 20px #fff;  -webkit-text-shadow:0 0 20px #fff;-moz-text-shadow:0 0 20px #fff; box-shadow:0 0 10px #999; -webkit-box-shadow:0 0 10px #999; -moz-box-shadow:0 0 10px #999;}
+.updown_span a { font-size: 20px;}
+.updown_span a:hover{ color: tomato}

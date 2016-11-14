@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 
 from market.views import (
-    home,cate,
+    home,cate,oneex,
 )
 
 urlpatterns = [
     url(r'^home/$',home),
     url(r'^cate/(\d+)/$',cate),
+    url(r'^oneex/(\d+)/$',oneex),
+
 ]

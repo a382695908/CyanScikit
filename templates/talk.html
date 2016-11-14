@@ -9,8 +9,36 @@
 
 {% block center%}
 <div id="main">
+    {% if error %}
+    <script language="JavaScript">
+		 alert("{{ error }}");
+	</script>
+    {% endif %}
     <div id="callBackPagination" class="piece">
-        <div id="mainContent"></div>
+        <div id="mainContent">
+            <table class="table table-hover piece morething_table" style="width: 90%;margin-left: 5%">
+                <thead><tr><th><h3>所有留言</h3></th></tr></thead>
+            </table>
+            {% autoescape off %}
+            <ul>
+                {% for talk in talks %}
+                <li><div class="talk_can"><h4>昵称：{{ talk.talk_name }}<span class="fr">发表时间：{{ talk.talk_time }}</span></h4><p>{{ talk.talk_content }}</p></div></li>
+                {% endfor %}
+            </ul>
+            {% endautoescape %}
+            <div class="updown">
+                {% if talks.has_previous %}
+                <span class="fl up">
+                    <a href="?page={{ all_item.previous_page_number }}">上一页</a>
+                </span>
+                {% endif %}
+                {% if talks.has_next %}
+                <span class="fr down">
+                    <a href="?page={{ talks.next_page_number }}">下一页</a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
         <div id="callBackPager"></div>
     </div>
     <div class="talk_page_talking">
@@ -19,10 +47,10 @@
         <div class="fr"><label >E_mail:</label><br><input type="email" placeholder="输入邮箱" name="email"></div>
         <div>
         <label>留言内容：</label><br>
-        <textarea type="tel" name="talk"></textarea>
+        <textarea type="tel" name="content"></textarea>
         </div>
         <input class="btn btn-success fl" type="submit" name="submit" value="我要留言">
-        <input class="btn btn-danger fr" type="button" name="cancel" value="撤销">
+        <input class="btn btn-danger fr" type="reset" name="cancel" value="撤销">
       </form>
     </div>
 </div><br>
@@ -31,34 +59,5 @@
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/extendPagination.js"></script>
 <script type="text/javascript" src="/static/js/base.js"></script>
-<script type="text/javascript">
-//调用分页
-$(function(){
-	    var total=200,showcounts=11,showlimits=7;
-        var totalCount = Number(total), showCount = showcounts,
-                limit = Number(showlimits) ;
-        createTable(1, limit, totalCount);
-        $('#callBackPager').extendPagination({
-            totalCount: totalCount,
-            showCount: showCount,
-            limit: limit,
-            callback: function (curr, limit, totalCount) {
-                createTable(curr, limit, totalCount);
-            }
-        });
-    function createTable(currPage, limit, total) {
-        var html = [], showNum = limit;
-        if (total - (currPage * limit) < 0) showNum = total - ((currPage - 1) * limit);
-        html.push(' <ul>');
-        for (var i = 1; i <= showNum; i++) {
-            html.push('<li><div class="talk_can"><h4>昵称<span>2016-12-02</span></h4><p>啊师傅说解释多空分水岭地那次事啊师傅说解释多空分水岭地那次事件的理念啊师傅说解释多空分水岭地那次事件的理念啊师傅说解释多空分水岭地那次事件的理念件的理念</p></div>');
-            html.push('</li>');
-        }
-        html.push('</ul>');
-        var mainObj = $('#mainContent');
-        mainObj.empty();
-        mainObj.html(html.join(''));
-    }
-});
-</script>
+
 {% endblock %}

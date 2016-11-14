@@ -9,6 +9,11 @@
 
 {% block center %}
 <div id="main">
+    {% if error %}
+    <script language="JavaScript">
+		 alert("{{ error }}");
+	</script>
+    {% endif %}
     <div class="item_page_blog">
       <h3 class="fl">{{ item_mess.item_title }}<br><br><span class="item_p">发表时间：{{ item_mess.item_time }} | 浏览次数：{{ item_mess.item_seenum }}</span></h3>
       <img class="fr" src="/static/images/logo.jpg">
@@ -23,14 +28,16 @@
       <hr style="border: 1px #e4b9b9 solid;">
       <h3><span>评论区：</span></h3>
        <ul>
+         {% if talk_list %}
+         {% for talk in talk_list %}
          <li>
-           <p>用户昵称</p>
-           <p>色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对部分曾经的</p>
+           <p>昵称：{{ talk.talk_name }}</p>
+           <p>{{ talk.talk_content }}</p>
          </li>
-         <li>
-           <p>用户昵称</p>
-           <p>色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部那就是东南风深刻的军力减肥出口就惨绿色的打开vnsjnvzldfv序列看到你发就当你红色部分曾经的部分这句话不对部分曾经的</p>
-         </li>
+         {% endfor %}
+       {% else %}
+           <p>暂无评论</p>
+       {% endif %}
        </ul>
     </div>
     <div class="item_page_talking">
@@ -39,10 +46,10 @@
         <div class="fr"><label >E_mail:</label><br><input type="email" placeholder="输入邮箱" name="email"></div>
         <div>
         <label>留言内容：</label><br>
-        <textarea type="tel" name="talk"></textarea>
+        <textarea type="tel" name="content"></textarea>
         </div>
         <input class="btn btn-success fl" type="submit" name="submit" value="我要留言">
-        <input class="btn btn-danger fr" type="button" name="cancel" value="撤销">
+        <input class="btn btn-danger fr" type="reset" name="cancel" value="撤销">
       </form>
     </div>
 </div>
