@@ -22,6 +22,7 @@ def home(request):
     return render_to_response("maket.html",{
         "wcate_list":wcate_list,
         'examples': examples,
+        "len_list":range(1,paginator.num_pages ),
     })
 
 def cate(request,num):

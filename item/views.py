@@ -22,6 +22,7 @@ def home(request):
 
     return render(request, 'item.html', {
         'all_item': all_item,
+        "len_list":range(1,paginator.num_pages ),
     })
 
 @csrf_exempt

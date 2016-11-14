@@ -22,20 +22,35 @@
 </table>
 <br>
 <div class="updown">
-    {% if all_news.has_previous %}
-    <span class="fl up">
-        <a href="?page={{ all_news.previous_page_number }}">上一页</a>
-    </span>
-    {% endif %}
-
-    {% if all_news.has_next %}
-    <span class="fr down">
-        <a href="?page={{ all_news.next_page_number }}">下一页</a>
-    </span>
-    {% endif %}
+    <ul class="pagination" >
+        <li class="previous">
+            {% if all_news.has_previous %}
+                <a href="?page={{ all_news.previous_page_number }}"><span>&laquo;</span></a>
+            {% else %}
+                <a><span>&laquo;</span></a>
+            {% endif %}
+        </li>
+        {% for page in len_list %}
+        <li class="active"><a href="?page={{ page }}">{{ page }}</a></li>
+        {% endfor %}
+        <li  class="next">
+            {% if all_news.has_next %}
+             <a href="?page={{ all_news.next_page_number }}"><span>&raquo;</span></a>
+            {% else %}
+                <a><span>&raquo;</span></a>
+            {% endif %}
+        </li>
+    </ul>
 </div>
 <script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/extendPagination.js"></script>
 <script type="text/javascript" src="/static/js/base.js"></script>
+<script>
+$(function(){
+	$(".pagination li").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		})
+	})
+</script>
 {% endblock %}

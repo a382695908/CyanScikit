@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
     news_list = news.objects.all()
-    paginator = Paginator(news_list, 10)  # Show 25 contacts per page
+    paginator = Paginator(news_list, 12)  # Show 25 contacts per page
     page = request.GET.get('page')
     try:
         all_news = paginator.page(page)
@@ -17,6 +17,7 @@ def home(request):
         all_news = paginator.page(paginator.num_pages)
     return render(request, 'news.html', {
         'all_news': all_news,
+        "len_list":range(1,paginator.num_pages ),
     })
 
 def one(request,id):

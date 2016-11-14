@@ -27,16 +27,25 @@
             </ul>
             {% endautoescape %}
             <div class="updown">
-                {% if talks.has_previous %}
-                <span class="fl up">
-                    <a href="?page={{ all_item.previous_page_number }}">上一页</a>
-                </span>
-                {% endif %}
-                {% if talks.has_next %}
-                <span class="fr down">
-                    <a href="?page={{ talks.next_page_number }}">下一页</a>
-                </span>
-                {% endif %}
+                <ul class="pagination">
+                    <li class="previous">
+                        {% if talks.has_previous %}
+                            <a href="?page={{ talks.previous_page_number }}"><span>&laquo;</span></a>
+                        {% else %}
+                            <a><span>&laquo;</span></a>
+                        {% endif %}
+                    </li>
+                    {% for page in len_list %}
+                    <li class="active"><a href="?page={{ page }}">{{ page }}</a></li>
+                    {% endfor %}
+                    <li  class="next">
+                        {% if talks.has_next %}
+                         <a href="?page={{ talks.next_page_number }}"><span>&raquo;</span></a>
+                        {% else %}
+                            <a><span>&raquo;</span></a>
+                        {% endif %}
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="callBackPager"></div>

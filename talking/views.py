@@ -37,4 +37,5 @@ def home(request):
     return render_to_response("talk.html",{
         "talks":talks,
         "error":error,
+        "len_list":range(1,paginator.num_pages ),
     })

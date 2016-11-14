@@ -32,6 +32,7 @@ def home(request):
         'all_blog': all_blog,
         "cates": getcate(),
         "hot_list":gethot(),
+        "len_list":range(1,paginator.num_pages ),
     })
 @csrf_exempt
 def one(request,id):
@@ -82,4 +83,5 @@ def onecate(request,catename):
         'all_blog': all_blog,
         "cates": getcate(),
         "hot_list":gethot(),
+        "len_list":range(1,paginator.num_pages ),
     })
