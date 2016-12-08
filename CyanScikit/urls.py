@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django import views
 from CyanScikit.upload import upload_image
+from CyanScikit.views import index
 urlpatterns = [
     url(r'^admin/uploads/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
     url(r"^uploads/(?P<path>.*)$",views.static.serve,{"document_root":settings.MEDIA_ROOT,}),
@@ -29,5 +30,5 @@ urlpatterns = [
     url(r'^market/', include('market.urls'), name='market'),
     url(r'^talking/', include('talking.urls'), name='talking'),
     url(r'^news/', include('news.urls'), name='news'),
-
+    url(r'^$', index,name="index"),
 ]

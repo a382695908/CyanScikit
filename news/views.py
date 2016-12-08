@@ -4,7 +4,7 @@ from news.models import news
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
-    news_list = news.objects.all()
+    news_list = news.objects.all().order_by("-news_time")
     paginator = Paginator(news_list, 12)  # Show 25 contacts per page
     page = request.GET.get('page')
     try:
