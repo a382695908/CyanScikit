@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^market/', include('market.urls'), name='market'),
     url(r'^talking/', include('talking.urls'), name='talking'),
     url(r'^news/', include('news.urls'), name='news'),
+    url(r'^user/', include('user.urls'), name='user'),
     url(r'^$', index,name="index"),
 ]
