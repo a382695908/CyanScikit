@@ -9,9 +9,14 @@ python 3.4<br>
 django1.10.4<br>
 mysql 5.6<br>
 
+#版本介绍
+master分支是最原始的版本，即1.0<br>
+2.0是目前开发维护的版本<br>
+
 #展示
 <img src="https://github.com/Thinkgamer/CyanScikit/blob/2.0/docs/show/%E9%A6%96%E9%A1%B5.png" alt="首页" align=center />
 <img src="https://github.com/Thinkgamer/CyanScikit/blob/2.0/docs/show/blog.png"  alt="博客" align=center />
 <img src="https://github.com/Thinkgamer/CyanScikit/blob/2.0/docs/show/news.png"  alt="新闻" align=center />
 <img src="https://github.com/Thinkgamer/CyanScikit/blob/2.0/docs/show/talks.png"  alt="留言板" align=center />
 <img src="https://github.com/Thinkgamer/CyanScikit/blob/2.0/docs/show/marksts.png"  alt="外包中心" align=center />
+
